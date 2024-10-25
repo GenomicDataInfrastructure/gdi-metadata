@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2024 PNED G.I.E.
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-[![REUSE status](https://api.reuse.software/badge/github.com/GenomicDataInfrastructure/oss-project-template)](https://api.reuse.software/info/github.com/GenomicDataInfrastructure/oss-project-template)
+<!-- [![REUSE status](https://api.reuse.software/badge/github.com/GenomicDataInfrastructure/oss-project-template)](https://api.reuse.software/info/github.com/GenomicDataInfrastructure/oss-project-template)
 ![example workflow](https://github.com/GenomicDataInfrastructure/oss-project-template/actions/workflows/main.yml/badge.svg)
 ![example workflow](https://github.com/GenomicDataInfrastructure/oss-project-template/actions/workflows/test.yml/badge.svg)
 ![example workflow](https://github.com/GenomicDataInfrastructure/oss-project-template/actions/workflows/release.yml/badge.svg)
@@ -73,4 +73,4 @@ This work is licensed under multiple licences:
 - https://www.sonarsource.com/products/sonarcloud/
 - https://www.bestpractices.dev/en
 - https://trivy.dev/
-- https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-docker-registry
+- https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-docker-registry -->
