@@ -46,4 +46,12 @@
     sh:nodeKind sh:IRI ; 
     dash:viewer dash:URIViewer ;
     dash:editor dash:URIEditor ;
+  ] ,
+    [
+    sh:path dct:license ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ] .

@@ -1,8 +1,17 @@
 <!--
-SPDX-FileCopyrightText: 2024 PNED G.I.E.
+SPDX-FileCopyrightText: 2024 Health-RI.
 
 SPDX-License-Identifier: CC-BY-4.0
 -->
+
+## Documentation
+
+For detailed information on using this repository, please refer to the [Developer Guide](https://genomicdatainfrastructure.github.io/gdi-userportal-docs/developer-guide/fdp/).
+
+
+
+
+
 
 <!-- [![REUSE status](https://api.reuse.software/badge/github.com/GenomicDataInfrastructure/oss-project-template)](https://api.reuse.software/info/github.com/GenomicDataInfrastructure/oss-project-template)
 ![example workflow](https://github.com/GenomicDataInfrastructure/oss-project-template/actions/workflows/main.yml/badge.svg)
