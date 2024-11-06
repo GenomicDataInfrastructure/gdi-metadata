@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Health-ri.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 @prefix :         <http://fairdatapoint.org/> .
 @prefix dash:     <http://datashapes.org/dash#> .
 @prefix dcat:     <http://www.w3.org/ns/dcat#> .
