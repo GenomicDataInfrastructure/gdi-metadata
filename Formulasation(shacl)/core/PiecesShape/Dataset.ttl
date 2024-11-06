@@ -180,7 +180,7 @@
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
+   # sh:minCount 1 ;
     sh:maxCount 1 ;
   ];
 
