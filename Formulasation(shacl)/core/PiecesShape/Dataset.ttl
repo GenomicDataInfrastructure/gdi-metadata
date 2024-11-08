@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Health-ri.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 @prefix :         <http://fairdatapoint.org/> .
 @prefix dash:     <http://datashapes.org/dash#> .
 @prefix dcat:     <http://www.w3.org/ns/dcat#> .
@@ -6,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix healthdcat: <http://example.com/ns/healthdcat#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
 @prefix : <http://coreRule-healthri.nl#> .
 
 :DatasetShape a sh:NodeShape ;
@@ -117,7 +121,7 @@
     dash:viewer dash:LiteralViewer ;
   ],
   [
-    sh:path healthdcat:minTypicalAge ;
+    sh:path healthdcatap:minTypicalAge ;
     sh:nodeKind sh:Literal ;
     # sh:datatype xsd:nonnegativeinteger ;
     sh:name "Mininum typical age of the population within the dataset" ;
@@ -126,7 +130,7 @@
     dash:viewer dash:LiteralViewer;
   ],
   [
-    sh:path healthdcat:maxTypicalAge ;
+    sh:path healthdcatap:maxTypicalAge ;
     sh:nodeKind sh:Literal ;
     # sh:datatype xsd:nonnegativeinteger ;
     sh:name "Maximum typical age of the population within the dataset" ;
@@ -135,7 +139,7 @@
     dash:viewer dash:LiteralViewer;
   ],
   [
-    sh:path healthdcat:numberOfUniqueIndividuals ;
+    sh:path healthdcatap:numberOfUniqueIndividuals ;
     sh:nodeKind sh:Literal ;
     # sh:datatype xsd:nonnegativeinteger ;
     sh:name "Number of unique individuals" ;
@@ -145,7 +149,7 @@
     dash:viewer dash:LiteralViewer;
   ],
   [
-    sh:path healthdcat:numberOfRecords ;
+    sh:path healthdcatap:numberOfRecords ;
     sh:nodeKind sh:Literal ;
     # sh:datatype xsd:nonnegativeinteger ;
     sh:name "Number of records" ;
@@ -155,7 +159,7 @@
     dash:viewer dash:LiteralViewer;
   ],
   [
-    sh:path healthdcat:populationCoverage ;
+    sh:path healthdcatap:populationCoverage ;
     sh:name "Population coverage (a definition of the population within a dataset)" ;
     sh:datatype xsd:string ;
     sh:nodeKind  sh:Literal;
