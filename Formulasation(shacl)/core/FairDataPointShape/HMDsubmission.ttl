@@ -1,0 +1,94 @@
+@prefix schema: <http://schema.org/> .
+@prefix fg: <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix gdi: <http://data.health-ri.nl/GDI/> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+gdi:HMDSubmissionShape a owl:Ontology;
+  rdfs:label "HMD submission"@en;
+  rdfs:comment "GDI HMD submission"@en;
+  dct:description "SHACL definitions for the GDI metadata - HMD submission class"@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-07-10T12:37:01.400Z"^^xsd:dateTime .
+
+gdi:HMDsubmissionShape a sh:NodeShape;
+  rdfs:label "HMDSubmission"@en;
+  sh:targetClass <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000750>;
+  sh:property <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000753>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000754>,
+    <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000755>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000756>,
+    <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000757>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000751>,
+    <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000758> .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000753> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000753>;
+  sh:name "Data Center"@en;
+  sh:description "Refers to the Department in charge of Data Production and/ or analysis"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000754> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000754>;
+  sh:name "Clinical Center"@en;
+  sh:description "Refers to the Clinical Department in charge of the patient"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000755> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000755>;
+  sh:name "Institution Clinical"@en;
+  sh:description "Identifies the Institution/s involved. Use ROR."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000756> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000756>;
+  sh:name "Institution Data Center"@en;
+  sh:description "Identifies the Institution/s involved. Use ROR."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000757> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000757>;
+  sh:name "Publication description"@en;
+  sh:description "Linked to the instance of publication_doi; should provide a human-readably description of the publication"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000751> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000751>;
+  sh:name "Collection"@en;
+  sh:description "Identifies collection (Biobank, Collection, Cohort, other types of projects) in which data are part of"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000758> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000758>;
+  sh:name "Research Consortia"@en;
+  sh:description "Identifies Research Consortia Involved"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

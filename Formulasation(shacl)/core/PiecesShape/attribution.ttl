@@ -2,7 +2,6 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -29,10 +28,30 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-gdi:ResourceShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Resource"@en;
-  rdfs:comment "GDI Resource placeholder"@en;
-  dct:description "SHACL stub for the GDI metadata model for Resource."@en;
+gdi:aux-AttributionShape a owl:Ontology;
+  rdfs:label "Attribution"@en;
+  rdfs:comment "GDI Attribution"@en;
+  dct:description "SHACL definitions for the GDI metadata model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-04T09:38:06.520Z"^^xsd:dateTime;
-  sh:targetClass dcat:Resource .
+  dct:modified "2025-07-08T15:30:01.590Z"^^xsd:dateTime .
+
+gdi:AttributionShape a sh:NodeShape;
+  rdfs:label "Attribution"@en;
+  sh:targetClass prov:Attribution;
+  sh:property <http://data.health-ri.nl/GDI/AttributionShape#prov:agent>, <http://data.health-ri.nl/GDI/AttributionShape#dcat:hadRole> .
+
+<http://data.health-ri.nl/GDI/AttributionShape#prov:agent> sh:path prov:agent;
+  sh:name "agent"@en;
+  sh:description "The agent that has a specific role with the described resource."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:LabelViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "role"@en;
+  sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:LabelViewer;
+  dash:editor dash:URIEditor .
