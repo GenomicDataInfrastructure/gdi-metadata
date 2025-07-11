@@ -1,8 +1,8 @@
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -29,38 +29,19 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-gdi:KindShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Kind"@en;
-  rdfs:comment "GDI Kind shape"@en;
-  dct:description "SHACL mandatory definitions for the GDI metadata model for vcard:Kind."@en;
+gdi:RightsStatementShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Rights Statement"@en;
+  rdfs:comment "GDI Rights Statement"@en;
+  dct:description "SHACL stub for the GDI metadata model for Rights Statement."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T07:57:31.260Z"^^xsd:dateTime;
-  sh:targetClass vcard:Kind;
-  sh:property <http://data.health-ri.nl/GDI/KindShape#vcard:hasURL>, <http://data.health-ri.nl/GDI/KindShape#vcard:hasEmail>,
-    <http://data.health-ri.nl/GDI/KindShape#vcard:fn> .
+  dct:modified "2025-07-11T08:03:52.590Z"^^xsd:dateTime;
+  sh:targetClass dct:RightsStatement;
+  sh:property <http://data.health-ri.nl/GDI/RightsStatementShape#rdfs:label> .
 
-<http://data.health-ri.nl/GDI/KindShape#vcard:hasURL> sh:path vcard:hasURL;
-  sh:name "contact page"@en;
-  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
-  sh:name "has email"@en;
-  sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:pattern "^mailto:.+@.+\\..+$";
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/KindShape#vcard:fn> sh:path vcard:fn;
-  sh:name "formatted name"@en;
-  sh:description "The full name of the contact point."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
+<http://data.health-ri.nl/GDI/RightsStatementShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "Free text statement that specifies the rights associated with the Distribution."@en;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  dash:editor dash:TextFieldEditor .

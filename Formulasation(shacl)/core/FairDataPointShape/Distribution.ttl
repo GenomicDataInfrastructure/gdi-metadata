@@ -28,13 +28,14 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 
 gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Distribution"@en;
   rdfs:comment "GDI Distribution."@en;
   dct:description "SHACL definitions for the GDI metadata model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-04T09:44:10.540Z"^^xsd:dateTime;
+  dct:modified "2025-07-11T08:37:52.730Z"^^xsd:dateTime;
   sh:targetClass dcat:Distribution;
   sh:property <http://data.health-ri.nl/GDI/DistributionShape#dcat:accessURL>, <http://data.health-ri.nl/GDI/DistributionShape#dcatap:applicableLegislation>,
     <http://data.health-ri.nl/GDI/DistributionShape#dcat:byteSize>, <http://data.health-ri.nl/GDI/DistributionShape#dct:description>,
@@ -103,13 +104,30 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node gdi:RightsStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/GDI/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+gdi:RightsStatementShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Rights Statement"@en;
+  rdfs:comment "GDI Rights Statement"@en;
+  dct:description "SHACL stub for the GDI metadata model for Rights Statement."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-07-11T08:03:52.590Z"^^xsd:dateTime;
+  sh:targetClass dct:RightsStatement;
+  sh:property <http://data.health-ri.nl/GDI/RightsStatementShape#rdfs:label> .
+
+<http://data.health-ri.nl/GDI/RightsStatementShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "Free text statement that specifies the rights associated with the Distribution."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .

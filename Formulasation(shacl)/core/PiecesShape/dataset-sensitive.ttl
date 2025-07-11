@@ -39,9 +39,20 @@ gdi:DatasetSensitiveShape a owl:Ontology, sh:NodeShape;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetSensitiveShape#health-theme>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#provenance>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#publisher>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#purpose>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#sample>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#type> .
+  sh:property <http://data.health-ri.nl/GDI/DatasetSensitiveShape#access-rights>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#health-theme>,
+    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#provenance>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#publisher>,
+    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#purpose>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#sample>,
+    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#type>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#contact-point> .
+
+<http://data.health-ri.nl/GDI/DatasetSensitiveShape#access-rights> sh:path dct:accessRights;
+  sh:name "access rights"@en;
+  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:defaultValue <https://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetSensitiveShape#health-theme> sh:path healthdcatap:healthTheme;
   sh:name "health theme"@en;
@@ -55,9 +66,9 @@ gdi:DatasetSensitiveShape a owl:Ontology, sh:NodeShape;
   sh:name "provenance"@en;
   sh:description "A statement about the lineage of a Dataset."@en;
   sh:minCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node gdi:ProvenanceStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/GDI/DatasetSensitiveShape#publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
@@ -73,7 +84,7 @@ gdi:DatasetSensitiveShape a owl:Ontology, sh:NodeShape;
   sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetSensitiveShape#sample> sh:path adms:sample;
@@ -92,3 +103,10 @@ gdi:DatasetSensitiveShape a owl:Ontology, sh:NodeShape;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/DatasetSensitiveShape#contact-point> sh:path dcat:contactPoint;
+  sh:name "contact point"@en;
+  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI .

@@ -34,7 +34,7 @@ gdi:KindShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "GDI Kind shape"@en;
   dct:description "SHACL mandatory definitions for the GDI metadata model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-04T09:40:16.170Z"^^xsd:dateTime;
+  dct:modified "2025-07-11T07:57:31.260Z"^^xsd:dateTime;
   sh:targetClass vcard:Kind;
   sh:property <http://data.health-ri.nl/GDI/KindShape#vcard:hasURL>, <http://data.health-ri.nl/GDI/KindShape#vcard:hasEmail>,
     <http://data.health-ri.nl/GDI/KindShape#vcard:fn> .

@@ -33,16 +33,33 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
 gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Dataset class - sensitive"@en, "DatasetOpenProtected"@en;
-  rdfs:comment "Excel template for Dataset class - sensitive"@en;
-  dct:description "This is an excel template for Dataset class - sensitive for GDI."@en;
+  rdfs:label "Dataset class - open protected"@en, "DatasetOpenProtected"@en;
+  rdfs:comment "Excel template for Dataset class - open protected"@en;
+  dct:description "This is an excel template for Dataset class - open protected for GDI."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#type> .
+  sh:property <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#access-rights>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#type>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#contact-point> .
+
+<http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#access-rights> sh:path dct:accessRights;
+  sh:name "access rights"@en;
+  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:in _:1bf300021b194639ba2091aa6f92f07b2;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+_:1bf300021b194639ba2091aa6f92f07b2 rdf:first eu:PUBLIC;
+  rdf:rest _:1bf300021b194639ba2091aa6f92f07b3 .
+
+_:1bf300021b194639ba2091aa6f92f07b3 rdf:first eu:RESTRICTED;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme> sh:path healthdcatap:healthTheme;
   sh:name "health theme"@en;
@@ -54,9 +71,9 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance> sh:path dct:provenance;
   sh:name "provenance"@en;
   sh:description "A statement about the lineage of a Dataset."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node gdi:ProvenanceStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
@@ -64,14 +81,14 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
   sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample> sh:path adms:sample;
@@ -88,3 +105,9 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#contact-point> sh:path dcat:contactPoint;
+  sh:name "contact point"@en;
+  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI .

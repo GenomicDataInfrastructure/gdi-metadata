@@ -39,37 +39,17 @@ gdi:DatasetBaseShape a owl:Ontology, sh:NodeShape;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetBaseShape#access-rights>, <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#contact-point>, <http://data.health-ri.nl/GDI/DatasetBaseShape#creator>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#description>, <http://data.health-ri.nl/GDI/DatasetBaseShape#distribution>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category>, <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage>, <http://data.health-ri.nl/GDI/DatasetBaseShape#identifier>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#is-referenced-by>, <http://data.health-ri.nl/GDI/DatasetBaseShape#keyword>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#maximum-typical-age>, <http://data.health-ri.nl/GDI/DatasetBaseShape#minimum-typical-age>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#modification-date>, <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-records>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-unique-infividuals>, <http://data.health-ri.nl/GDI/DatasetBaseShape#other-identifier>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#HMD-submission>, <http://data.health-ri.nl/GDI/DatasetBaseShape#submitter-role>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#release-date>, <http://data.health-ri.nl/GDI/DatasetBaseShape#theme>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#title> .
-
-<http://data.health-ri.nl/GDI/DatasetBaseShape#access-rights> sh:path dct:accessRights;
-  sh:name "access rights"@en;
-  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:in _:2925e39851ae4d6f93fa0027ae6c410c2;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
-_:2925e39851ae4d6f93fa0027ae6c410c2 rdf:first eu:PUBLIC;
-  rdf:rest _:2925e39851ae4d6f93fa0027ae6c410c3 .
-
-_:2925e39851ae4d6f93fa0027ae6c410c3 rdf:first eu:RESTRICTED;
-  rdf:rest _:2925e39851ae4d6f93fa0027ae6c410c4 .
-
-_:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
-  rdf:rest rdf:nil .
+  sh:property <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#creator>, <http://data.health-ri.nl/GDI/DatasetBaseShape#description>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#distribution>, <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body>, <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#identifier>, <http://data.health-ri.nl/GDI/DatasetBaseShape#is-referenced-by>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#keyword>, <http://data.health-ri.nl/GDI/DatasetBaseShape#maximum-typical-age>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#minimum-typical-age>, <http://data.health-ri.nl/GDI/DatasetBaseShape#modification-date>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-records>, <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-unique-infividuals>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#other-identifier>, <http://data.health-ri.nl/GDI/DatasetBaseShape#HMD-submission>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#submitter-role>, <http://data.health-ri.nl/GDI/DatasetBaseShape#release-date>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#theme>, <http://data.health-ri.nl/GDI/DatasetBaseShape#title> .
 
 <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation> sh:path dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
@@ -77,15 +57,6 @@ _:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/DatasetBaseShape#contact-point> sh:path dcat:contactPoint;
-  sh:name "contact point"@en;
-  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -117,7 +88,6 @@ _:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
 <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category> sh:path healthdcatap:healthCategory;
   sh:name "health category"@en;
   sh:description "The health category to which this dataset belongs as described in the Commission Regulation on the European Health Data Space laying down a list of categories of electronic data for secondary use, Art.51."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -125,7 +95,6 @@ _:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
 <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body> sh:path healthdcatap:hdab;
   sh:name "health data access body"@en;
   sh:description "Health Data Access Body supporting access to data in the Member State."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -134,7 +103,6 @@ _:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
 <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -143,7 +111,6 @@ _:2925e39851ae4d6f93fa0027ae6c410c4 rdf:first eu:NON_PUBLIC;
   sh:name "identifier"@en;
   sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .

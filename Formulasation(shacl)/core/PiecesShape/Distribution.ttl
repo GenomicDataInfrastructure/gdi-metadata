@@ -34,7 +34,7 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "GDI Distribution."@en;
   dct:description "SHACL definitions for the GDI metadata model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-04T09:44:10.540Z"^^xsd:dateTime;
+  dct:modified "2025-07-11T08:37:52.730Z"^^xsd:dateTime;
   sh:targetClass dcat:Distribution;
   sh:property <http://data.health-ri.nl/GDI/DistributionShape#dcat:accessURL>, <http://data.health-ri.nl/GDI/DistributionShape#dcatap:applicableLegislation>,
     <http://data.health-ri.nl/GDI/DistributionShape#dcat:byteSize>, <http://data.health-ri.nl/GDI/DistributionShape#dct:description>,
@@ -103,9 +103,9 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node gdi:RightsStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/GDI/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;

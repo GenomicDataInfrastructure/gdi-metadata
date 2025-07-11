@@ -32,6 +32,7 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 
 gdi:DatasetBaseShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Dataset class - base"@en, "DatasetBase"@en;
@@ -40,40 +41,17 @@ gdi:DatasetBaseShape a owl:Ontology, sh:NodeShape;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetBaseShape#access-rights>, <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#contact-point>, <http://data.health-ri.nl/GDI/DatasetBaseShape#creator>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#description>, <http://data.health-ri.nl/GDI/DatasetBaseShape#distribution>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category>, <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage>, <http://data.health-ri.nl/GDI/DatasetBaseShape#identifier>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#is-referenced-by>, <http://data.health-ri.nl/GDI/DatasetBaseShape#keyword>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#maximum-typical-age>, <http://data.health-ri.nl/GDI/DatasetBaseShape#minimum-typical-age>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#modification-date>, <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-records>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-unique-infividuals>, <http://data.health-ri.nl/GDI/DatasetBaseShape#other-identifier>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#HMD-submission>, <http://data.health-ri.nl/GDI/DatasetBaseShape#submitter-role>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#release-date>, <http://data.health-ri.nl/GDI/DatasetBaseShape#theme>,
-    <http://data.health-ri.nl/GDI/DatasetBaseShape#title> .
-
-<http://data.health-ri.nl/GDI/DatasetBaseShape#access-rights> sh:path dct:accessRights;
-  sh:name "access rights"@en;
-  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:in _:genid-ab41c6922d5e4f0692a9159c278b345620-09E62ABF29472F2723B14387854C3BCD;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
-_:genid-ab41c6922d5e4f0692a9159c278b345620-09E62ABF29472F2723B14387854C3BCD rdf:first
-    eu:PUBLIC;
-  rdf:rest _:genid-ab41c6922d5e4f0692a9159c278b345620-AD7261CC89C1AFE1A32D04CE76FA2D45 .
-
-_:genid-ab41c6922d5e4f0692a9159c278b345620-AD7261CC89C1AFE1A32D04CE76FA2D45 rdf:first
-    eu:RESTRICTED;
-  rdf:rest _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 .
-
-_:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:first
-    eu:NON_PUBLIC;
-  rdf:rest rdf:nil .
+  sh:property <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#creator>, <http://data.health-ri.nl/GDI/DatasetBaseShape#description>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#distribution>, <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body>, <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#identifier>, <http://data.health-ri.nl/GDI/DatasetBaseShape#is-referenced-by>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#keyword>, <http://data.health-ri.nl/GDI/DatasetBaseShape#maximum-typical-age>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#minimum-typical-age>, <http://data.health-ri.nl/GDI/DatasetBaseShape#modification-date>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-records>, <http://data.health-ri.nl/GDI/DatasetBaseShape#number-of-unique-infividuals>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#other-identifier>, <http://data.health-ri.nl/GDI/DatasetBaseShape#HMD-submission>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#submitter-role>, <http://data.health-ri.nl/GDI/DatasetBaseShape#release-date>,
+    <http://data.health-ri.nl/GDI/DatasetBaseShape#theme>, <http://data.health-ri.nl/GDI/DatasetBaseShape#title> .
 
 <http://data.health-ri.nl/GDI/DatasetBaseShape#applicable-legislation> sh:path dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
@@ -81,15 +59,6 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
   sh:minCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/DatasetBaseShape#contact-point> sh:path dcat:contactPoint;
-  sh:name "contact point"@en;
-  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -121,7 +90,6 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
 <http://data.health-ri.nl/GDI/DatasetBaseShape#health-category> sh:path healthdcatap:healthCategory;
   sh:name "health category"@en;
   sh:description "The health category to which this dataset belongs as described in the Commission Regulation on the European Health Data Space laying down a list of categories of electronic data for secondary use, Art.51."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -129,7 +97,6 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
 <http://data.health-ri.nl/GDI/DatasetBaseShape#health-data-access-body> sh:path healthdcatap:hdab;
   sh:name "health data access body"@en;
   sh:description "Health Data Access Body supporting access to data in the Member State."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -138,7 +105,6 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
 <http://data.health-ri.nl/GDI/DatasetBaseShape#geographical-coverage> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -147,7 +113,6 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
   sh:name "identifier"@en;
   sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
@@ -266,16 +231,35 @@ _:genid-ab41c6922d5e4f0692a9159c278b345620-DBD176959055953758E54427F15DFCB0 rdf:
   dash:editor dash:TextFieldEditor .
 
 gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Dataset class - sensitive"@en, "DatasetOpenProtected"@en;
-  rdfs:comment "Excel template for Dataset class - sensitive"@en;
-  dct:description "This is an excel template for Dataset class - sensitive for GDI."@en;
+  rdfs:label "Dataset class - open protected"@en, "DatasetOpenProtected"@en;
+  rdfs:comment "Excel template for Dataset class - open protected"@en;
+  dct:description "This is an excel template for Dataset class - open protected for GDI."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample>,
-    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#type> .
+  sh:property <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#access-rights>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample>, <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#type>,
+    <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#contact-point> .
+
+<http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#access-rights> sh:path dct:accessRights;
+  sh:name "access rights"@en;
+  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:in _:genid-30a7df8091b14cb1aeef994d4788bd7d24-51604E704AA8C3E41FBE4A2764C9B0A8;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-30a7df8091b14cb1aeef994d4788bd7d24-51604E704AA8C3E41FBE4A2764C9B0A8 rdf:first
+    eu:PUBLIC;
+  rdf:rest _:genid-30a7df8091b14cb1aeef994d4788bd7d24-2D3F9283933F68590E8EC44752D5F1A7 .
+
+_:genid-30a7df8091b14cb1aeef994d4788bd7d24-2D3F9283933F68590E8EC44752D5F1A7 rdf:first
+    eu:RESTRICTED;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#health-theme> sh:path healthdcatap:healthTheme;
   sh:name "health theme"@en;
@@ -287,9 +271,9 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#provenance> sh:path dct:provenance;
   sh:name "provenance"@en;
   sh:description "A statement about the lineage of a Dataset."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node gdi:ProvenanceStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
@@ -297,14 +281,14 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
   sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#sample> sh:path adms:sample;
@@ -321,6 +305,12 @@ gdi:DatasetOpenProtectedShape a owl:Ontology, sh:NodeShape;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/GDI/DatasetOpenProtectedShape#contact-point> sh:path dcat:contactPoint;
+  sh:name "contact point"@en;
+  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI .
 
 gdi:aux-AttributionShape a owl:Ontology;
   rdfs:label "Attribution"@en;
@@ -385,6 +375,23 @@ gdi:IdentifierShape a sh:NodeShape;
   sh:name "name"@en;
   sh:minCount 1;
   sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+gdi:ProvenanceStatementShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Provenance Statement"@en;
+  rdfs:comment "GDI Provenance Statement"@en;
+  dct:description "SHACL stub for the GDI metadata model for Provenance Statement."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-07-11T08:37:17.680Z"^^xsd:dateTime;
+  sh:targetClass dct:ProvenanceStatement;
+  sh:property <http://data.health-ri.nl/GDI/ProvenanceStatementShape#rdfs:label> .
+
+<http://data.health-ri.nl/GDI/ProvenanceStatementShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "A statement about the lineage of a Dataset. Information about how the data was collected, including methodologies, tools, and protocols used."@en;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
