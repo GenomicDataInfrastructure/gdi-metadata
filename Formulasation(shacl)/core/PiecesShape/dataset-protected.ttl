@@ -25,96 +25,88 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix gdi: <http://data.health-ri.nl/GDI/> .
-@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-gdi:DatasetSensitiveShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Dataset class - sensitive"@en, "DatasetSensitive"@en;
-  rdfs:comment "Excel template for Dataset class - sensitive"@en;
-  dct:description "This is an excel template for Dataset class - sensitive for GDI."@en;
+gdi:DatasetProtectedShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Dataset class - protected"@en, "Dataset Protected"@en;
+  rdfs:comment "Excel template for Dataset class - protected"@en;
+  dct:description "This is an excel template for Dataset class - protected for GDI."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/GDI/DatasetSensitiveShape#access-rights>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#health-theme>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#provenance>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#publisher>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#purpose>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#sample>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#type>, <http://data.health-ri.nl/GDI/DatasetSensitiveShape#contact-point>,
-    <http://data.health-ri.nl/GDI/DatasetSensitiveShape#keyword> .
+  sh:property <http://data.health-ri.nl/GDI/DatasetProtectedShape#access-rights>, <http://data.health-ri.nl/GDI/DatasetProtectedShape#health-theme>,
+    <http://data.health-ri.nl/GDI/DatasetProtectedShape#provenance>, <http://data.health-ri.nl/GDI/DatasetProtectedShape#publisher>,
+    <http://data.health-ri.nl/GDI/DatasetProtectedShape#purpose>, <http://data.health-ri.nl/GDI/DatasetProtectedShape#sample>,
+    <http://data.health-ri.nl/GDI/DatasetProtectedShape#type>, <http://data.health-ri.nl/GDI/DatasetProtectedShape#contact-point>,
+    <http://data.health-ri.nl/GDI/DatasetProtectedShape#keyword> .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#access-rights> sh:path dct:accessRights;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#access-rights> sh:path dct:accessRights;
   sh:name "access rights"@en;
   sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+  sh:defaultValue <https://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#health-theme> sh:path healthdcatap:healthTheme;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#health-theme> sh:path healthdcatap:healthTheme;
   sh:name "health theme"@en;
   sh:description "A category of the Dataset or tag describing the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#provenance> sh:path dct:provenance;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#provenance> sh:path dct:provenance;
   sh:name "provenance"@en;
   sh:description "A statement about the lineage of a Dataset."@en;
-  sh:minCount 1;
   sh:node gdi:ProvenanceStatementShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#publisher> sh:path dct:publisher;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#purpose> sh:path dpv:hasPurpose;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
   sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#sample> sh:path adms:sample;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#sample> sh:path adms:sample;
   sh:name "sample"@en;
   sh:description "A sample distribution of the dataset"@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#type> sh:path dct:type;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#contact-point> sh:path dcat:contactPoint;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#contact-point> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI .
 
-<http://data.health-ri.nl/GDI/DatasetSensitiveShape#keyword> sh:path dcat:keyword;
+<http://data.health-ri.nl/GDI/DatasetProtectedShape#keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
   sh:description "A keyword or tag describing the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;

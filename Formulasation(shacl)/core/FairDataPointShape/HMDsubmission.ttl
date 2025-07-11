@@ -34,7 +34,7 @@ gdi:HMDSubmissionShape a owl:Ontology;
   rdfs:comment "GDI HMD submission"@en;
   dct:description "SHACL definitions for the GDI metadata - HMD submission class"@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-10T12:37:01.400Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T09:47:35.490Z"^^xsd:dateTime .
 
 gdi:HMDsubmissionShape a sh:NodeShape;
   rdfs:label "HMDSubmission"@en;

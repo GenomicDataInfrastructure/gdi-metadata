@@ -33,7 +33,7 @@ gdi:aux-IdentifierShape a owl:Ontology;
   rdfs:comment "GDI identifier"@en;
   dct:description "SHACL definitions for the GDI metadata model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-04T09:42:04.550Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T09:43:49.310Z"^^xsd:dateTime .
 
 gdi:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;
@@ -44,6 +44,7 @@ gdi:IdentifierShape a sh:NodeShape;
 <http://data.health-ri.nl/GDI/IdentifierShape#skos:notation> sh:path skos:notation;
   sh:name "notation"@en;
   sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
+  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:string;

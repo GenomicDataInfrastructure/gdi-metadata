@@ -35,13 +35,11 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "GDI Distribution."@en;
   dct:description "SHACL definitions for the GDI metadata model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T08:37:52.730Z"^^xsd:dateTime;
+  dct:modified "2025-07-11T09:44:34.410Z"^^xsd:dateTime;
   sh:targetClass dcat:Distribution;
   sh:property <http://data.health-ri.nl/GDI/DistributionShape#dcat:accessURL>, <http://data.health-ri.nl/GDI/DistributionShape#dcatap:applicableLegislation>,
-    <http://data.health-ri.nl/GDI/DistributionShape#dcat:byteSize>, <http://data.health-ri.nl/GDI/DistributionShape#dct:description>,
-    <http://data.health-ri.nl/GDI/DistributionShape#dct:format>, <http://data.health-ri.nl/GDI/DistributionShape#dct:license>,
-    <http://data.health-ri.nl/GDI/DistributionShape#dcat:mediaType>, <http://data.health-ri.nl/GDI/DistributionShape#dct:rights>,
-    <http://data.health-ri.nl/GDI/DistributionShape#dct:title> .
+    <http://data.health-ri.nl/GDI/DistributionShape#dcat:byteSize>, <http://data.health-ri.nl/GDI/DistributionShape#dct:format>,
+    <http://data.health-ri.nl/GDI/DistributionShape#dct:rights> .
 
 <http://data.health-ri.nl/GDI/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
   sh:name "access url"@en;
@@ -69,31 +67,9 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/GDI/DistributionShape#dct:description> sh:path dct:description;
-  sh:name "description"@en;
-  sh:description "This property can be repeated for parallel language versions of the description."@en;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
 <http://data.health-ri.nl/GDI/DistributionShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
   sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/DistributionShape#dct:license> sh:path dct:license;
-  sh:name "license"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/GDI/DistributionShape#dcat:mediaType> sh:path dcat:mediaType;
-  sh:name "media type"@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -107,13 +83,6 @@ gdi:DistributionShape a owl:Ontology, sh:NodeShape;
   sh:node gdi:RightsStatementShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
-
-<http://data.health-ri.nl/GDI/DistributionShape#dct:title> sh:path dct:title;
-  sh:name "title"@en;
-  sh:description "This property can be repeated for parallel language versions of the description."@en;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
 
 gdi:RightsStatementShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Rights Statement"@en;
