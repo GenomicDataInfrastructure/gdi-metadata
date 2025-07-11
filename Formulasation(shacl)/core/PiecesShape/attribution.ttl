@@ -33,7 +33,7 @@ gdi:aux-AttributionShape a owl:Ontology;
   rdfs:comment "GDI Attribution"@en;
   dct:description "SHACL definitions for the GDI metadata model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T09:44:56.620Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T10:22:05.570Z"^^xsd:dateTime .
 
 gdi:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -43,7 +43,6 @@ gdi:AttributionShape a sh:NodeShape;
 <http://data.health-ri.nl/GDI/AttributionShape#prov:agent> sh:path prov:agent;
   sh:name "agent"@en;
   sh:description "The agent that has a specific role with the described resource."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
@@ -52,7 +51,6 @@ gdi:AttributionShape a sh:NodeShape;
 <http://data.health-ri.nl/GDI/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
   sh:name "role"@en;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
