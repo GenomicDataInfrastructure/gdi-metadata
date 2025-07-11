@@ -34,7 +34,7 @@ gdi:HMDSubmissionShape a owl:Ontology;
   rdfs:comment "GDI HMD submission"@en;
   dct:description "SHACL definitions for the GDI metadata - HMD submission class"@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T09:47:35.490Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T09:56:33.850Z"^^xsd:dateTime .
 
 gdi:HMDsubmissionShape a sh:NodeShape;
   rdfs:label "HMDSubmission"@en;
@@ -42,7 +42,7 @@ gdi:HMDsubmissionShape a sh:NodeShape;
   sh:property <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000753>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000754>,
     <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000755>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000756>,
     <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000757>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000751>,
-    <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000758> .
+    <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000758>, <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000752> .
 
 <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000753> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000753>;
   sh:name "Data Center"@en;
@@ -89,6 +89,13 @@ gdi:HMDsubmissionShape a sh:NodeShape;
 <http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000758> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000758>;
   sh:name "Research Consortia"@en;
   sh:description "Identifies Research Consortia Involved"@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/GDI/HMDsubmissionShape#fg:0000752> sh:path <https://fairgenomes.org/fairgenomes-semantic-model/generated/resource/FG_0000752>;
+  sh:name "Submitter Role"@en;
+  sh:description "Role of the Submitter (e.g. Oncologist in charge of the patient, Research Project PI)."@en;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
