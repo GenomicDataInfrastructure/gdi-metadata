@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -48,6 +54,7 @@ gdi:DatasetSeriesShape a sh:NodeShape;
   sh:path dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
   sh:description "The legislation that mandates the creation or management of the Dataset Series."@en;
+  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -55,7 +62,6 @@ gdi:DatasetSeriesShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DatasetSeriesShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
-  sh:minCount 1;
   sh:node gdi:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .

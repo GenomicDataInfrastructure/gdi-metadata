@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -92,7 +98,6 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DatasetShape#applicable-legislation> sh:path dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
   sh:description "The legislation that mandates the creation or management of the Dataset. The default value is the ELI of the EHDS."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
   dash:viewer dash:URIViewer;
@@ -123,7 +128,6 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:node gdi:KindShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:BlankNodeEditor .
@@ -131,7 +135,6 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DatasetShape#creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
-  sh:minCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -188,11 +191,18 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
+<http://data.gdi.eu/core/p2/DatasetShape#health-catagory> sh:path healthdcatap:healthCatagory;
+  sh:name "health catagory"@en;
+  sh:description "A category of the Dataset or tag describing the Dataset."@en;
+  sh:nodeKind sh:IRI;
+  sh:minCount 1;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
 <http://data.gdi.eu/core/p2/DatasetShape#identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
@@ -304,7 +314,6 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DatasetShape#publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
@@ -415,6 +424,7 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DatasetShape#type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
+  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -53,14 +59,12 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
   sh:name "access service"@en;
-  sh:maxCount 1;
   sh:class dcat:DataService .
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
   sh:name "access url"@en;
   sh:description "The resource at the access URL may contain information about how to get the Dataset."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -74,7 +78,6 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:byteSize> sh:path dcat:byteSize;
   sh:name "byte size"@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:nonNegativeInteger;
@@ -114,14 +117,12 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:downloadURL> sh:path dcat:downloadURL;
   sh:name "download URL"@en;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.gdi.eu/core/p2/DistributionShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -136,7 +137,6 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#dct:license> sh:path dct:license;
   sh:name "license"@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -191,8 +191,6 @@ gdi:DistributionShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DistributionShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -229,7 +227,6 @@ _:63db696725d34edebb948ae5f263a6625 rdf:first status:DEPRECATED;
 <http://data.gdi.eu/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "This property can be repeated for parallel language versions of the title."@en;
-  sh:minCount 1;
   sh:nodeKind sh:Literal;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;

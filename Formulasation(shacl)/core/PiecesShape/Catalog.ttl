@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -76,6 +82,7 @@ Whenever possible, use a general contact information (for example from a departm
 <http://data.gdi.eu/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "Note that the Health-RI model diverges from DCAT-AP NL here, which reduces the maximum number of creators to 1. The Health-RI model allows specification of multiple creators of a catalogue."@en;
+  sh:maxCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -144,7 +151,6 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
 <http://data.gdi.eu/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "The organisation or individual that is holder of the intellectual property rights of a dataset. For more details about the publisher, see the class Agent. Example: Radboudumc."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
@@ -162,7 +168,6 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
 <http://data.gdi.eu/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "The rights statement should be a free-text statement placed at a web-accessible location such that the value of this property is the IRI pointing to that statement."@en;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

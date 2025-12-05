@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -44,6 +50,7 @@ gdi:KindShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
   sh:name "contact page"@en;
   sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -51,7 +58,6 @@ gdi:KindShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
   sh:name "has email"@en;
   sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";

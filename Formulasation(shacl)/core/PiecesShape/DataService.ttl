@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Health-RI
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 @prefix schema: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -53,7 +59,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "Access Rights"@en;
   sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. Use one of the following values (:public, :restricted, :non-public)."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -77,8 +82,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact Point"@en;
   sh:description "Contact information that can be used for sending comments about the Data Service."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
   sh:node gdi:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -98,7 +101,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:description> sh:path dct:description;
   sh:name "Description"@en;
   sh:description "A free-text account of the Data Service."@en;
-  sh:minCount 1;
   sh:nodeKind sh:Literal;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
@@ -108,8 +110,6 @@ gdi:DataServiceShape a sh:NodeShape;
     dcat:endpointDescription;
   sh:name "end point description"@en;
   sh:description "The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -118,7 +118,6 @@ gdi:DataServiceShape a sh:NodeShape;
   sh:name "end point URL"@en;
   sh:description "The root location or primary endpoint of the service (an IRI)."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -135,14 +134,6 @@ gdi:DataServiceShape a sh:NodeShape;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:identifier> sh:path dct:identifier;
-  sh:name "Identifier"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
@@ -167,7 +158,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:license> sh:path dct:license;
   sh:name "License"@en;
   sh:description "A licence under which the Data service is made available."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -190,7 +180,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
   sh:name "Publisher"@en;
   sh:description "An entity (organisation) responsible for making the Data Service available."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
@@ -206,7 +195,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme> sh:path dcat:theme;
   sh:name "theme"@en;
   sh:description "A Data Service may be associated with multiple themes."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
