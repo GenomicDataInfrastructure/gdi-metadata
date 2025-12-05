@@ -103,7 +103,33 @@ Whenever possible, use a general contact information (for example from a departm
   sh:name "geographical coverage"@en;
   sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
   sh:nodeKind sh:IRI;
-  sh:in _:catalogCountryList;
+  sh:in (
+    <http://publications.europa.eu/resource/authority/country/GBR>
+    <http://publications.europa.eu/resource/authority/country/BEL>
+    <http://publications.europa.eu/resource/authority/country/BGR>
+    <http://publications.europa.eu/resource/authority/country/CYP>
+    <http://publications.europa.eu/resource/authority/country/CZE>
+    <http://publications.europa.eu/resource/authority/country/DNK>
+    <http://publications.europa.eu/resource/authority/country/DEU>
+    <http://publications.europa.eu/resource/authority/country/EST>
+    <http://publications.europa.eu/resource/authority/country/ESP>
+    <http://publications.europa.eu/resource/authority/country/FIN>
+    <http://publications.europa.eu/resource/authority/country/FRA>
+    <http://publications.europa.eu/resource/authority/country/HRV>
+    <http://publications.europa.eu/resource/authority/country/HUN>
+    <http://publications.europa.eu/resource/authority/country/IRL>
+    <http://publications.europa.eu/resource/authority/country/ITA>
+    <http://publications.europa.eu/resource/authority/country/LUX>
+    <http://publications.europa.eu/resource/authority/country/LVA>
+    <http://publications.europa.eu/resource/authority/country/LTU>
+    <http://publications.europa.eu/resource/authority/country/MLT>
+    <http://publications.europa.eu/resource/authority/country/NLD>
+    <http://publications.europa.eu/resource/authority/country/NOR>
+    <http://publications.europa.eu/resource/authority/country/PRT>
+    <http://publications.europa.eu/resource/authority/country/ROU>
+    <http://publications.europa.eu/resource/authority/country/SWE>
+    <http://publications.europa.eu/resource/authority/country/SVN>
+  );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
@@ -128,84 +154,34 @@ Note that deeply nested structures should be avoided, and can currently not be d
   sh:description """The value of this property must be an IRI from the provided controlled vocabulary.
 For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
   sh:nodeKind sh:IRI;
-  sh:in _:catalogCountryList;
+  sh:in (
+    <http://publications.europa.eu/resource/authority/language/ENG>
+    <http://publications.europa.eu/resource/authority/language/NLD>
+    <http://publications.europa.eu/resource/authority/language/FRA>
+    <http://publications.europa.eu/resource/authority/language/DEU>
+    <http://publications.europa.eu/resource/authority/language/SPA>
+    <http://publications.europa.eu/resource/authority/language/POR>
+    <http://publications.europa.eu/resource/authority/language/ITA>
+    <http://publications.europa.eu/resource/authority/language/SWE>
+    <http://publications.europa.eu/resource/authority/language/FIN>
+    <http://publications.europa.eu/resource/authority/language/EST>
+    <http://publications.europa.eu/resource/authority/language/LAV>
+    <http://publications.europa.eu/resource/authority/language/LIT>
+    <http://publications.europa.eu/resource/authority/language/SLV>
+    <http://publications.europa.eu/resource/authority/language/HUN>
+    <http://publications.europa.eu/resource/authority/language/CES>
+    <http://publications.europa.eu/resource/authority/language/DAN>
+    <http://publications.europa.eu/resource/authority/language/BUL>
+    <http://publications.europa.eu/resource/authority/language/RON>
+    <http://publications.europa.eu/resource/authority/language/MLT>
+    <http://publications.europa.eu/resource/authority/language/ELL>
+    <http://publications.europa.eu/resource/authority/language/HRV>
+    <http://publications.europa.eu/resource/authority/language/LTZ>
+    <http://publications.europa.eu/resource/authority/language/NOR>
+  );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:catalogCountryList rdf:first <http://publications.europa.eu/resource/authority/country/BEL>;
-  rdf:rest _:catalogCountryListRest1 .
-
-_:catalogCountryListRest1 rdf:first <http://publications.europa.eu/resource/authority/country/BGR>;
-  rdf:rest _:catalogCountryListRest2 .
-
-_:catalogCountryListRest2 rdf:first <http://publications.europa.eu/resource/authority/country/CYP>;
-  rdf:rest _:catalogCountryListRest3 .
-
-_:catalogCountryListRest3 rdf:first <http://publications.europa.eu/resource/authority/country/CZE>;
-  rdf:rest _:catalogCountryListRest4 .
-
-_:catalogCountryListRest4 rdf:first <http://publications.europa.eu/resource/authority/country/DNK>;
-  rdf:rest _:catalogCountryListRest5 .
-
-_:catalogCountryListRest5 rdf:first <http://publications.europa.eu/resource/authority/country/DEU>;
-  rdf:rest _:catalogCountryListRest6 .
-
-_:catalogCountryListRest6 rdf:first <http://publications.europa.eu/resource/authority/country/EST>;
-  rdf:rest _:catalogCountryListRest7 .
-
-_:catalogCountryListRest7 rdf:first <http://publications.europa.eu/resource/authority/country/ESP>;
-  rdf:rest _:catalogCountryListRest8 .
-
-_:catalogCountryListRest8 rdf:first <http://publications.europa.eu/resource/authority/country/FIN>;
-  rdf:rest _:catalogCountryListRest9 .
-
-_:catalogCountryListRest9 rdf:first <http://publications.europa.eu/resource/authority/country/FRA>;
-  rdf:rest _:catalogCountryListRest10 .
-
-_:catalogCountryListRest10 rdf:first <http://publications.europa.eu/resource/authority/country/HRV>;
-  rdf:rest _:catalogCountryListRest11 .
-
-_:catalogCountryListRest11 rdf:first <http://publications.europa.eu/resource/authority/country/HUN>;
-  rdf:rest _:catalogCountryListRest12 .
-
-_:catalogCountryListRest12 rdf:first <http://publications.europa.eu/resource/authority/country/IRL>;
-  rdf:rest _:catalogCountryListRest13 .
-
-_:catalogCountryListRest13 rdf:first <http://publications.europa.eu/resource/authority/country/ITA>;
-  rdf:rest _:catalogCountryListRest14 .
-
-_:catalogCountryListRest14 rdf:first <http://publications.europa.eu/resource/authority/country/LUX>;
-  rdf:rest _:catalogCountryListRest15 .
-
-_:catalogCountryListRest15 rdf:first <http://publications.europa.eu/resource/authority/country/LVA>;
-  rdf:rest _:catalogCountryListRest16 .
-
-_:catalogCountryListRest16 rdf:first <http://publications.europa.eu/resource/authority/country/LTU>;
-  rdf:rest _:catalogCountryListRest17 .
-
-_:catalogCountryListRest17 rdf:first <http://publications.europa.eu/resource/authority/country/MLT>;
-  rdf:rest _:catalogCountryListRest18 .
-
-_:catalogCountryListRest18 rdf:first <http://publications.europa.eu/resource/authority/country/NLD>;
-  rdf:rest _:catalogCountryListRest19 .
-
-_:catalogCountryListRest19 rdf:first <http://publications.europa.eu/resource/authority/country/NOR>;
-  rdf:rest _:catalogCountryListRest20 .
-
-_:catalogCountryListRest20 rdf:first <http://publications.europa.eu/resource/authority/country/PRT>;
-  rdf:rest _:catalogCountryListRest21 .
-
-_:catalogCountryListRest21 rdf:first <http://publications.europa.eu/resource/authority/country/ROU>;
-  rdf:rest _:catalogCountryListRest22 .
-
-_:catalogCountryListRest22 rdf:first <http://publications.europa.eu/resource/authority/country/SWE>;
-  rdf:rest _:catalogCountryListRest23 .
-
-_:catalogCountryListRest23 rdf:first <http://publications.europa.eu/resource/authority/country/SVN>;
-  rdf:rest _:catalogCountryListRest24 .
-
-_:catalogCountryListRest24 rdf:first <http://publications.europa.eu/resource/authority/country/GBR>;
-  rdf:rest rdf:nil .
 
 <http://data.gdi.eu/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
