@@ -187,32 +187,7 @@ gdi:Standard1MGCohort a dct:Standard;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset. This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
-  sh:in (
-    <http://publications.europa.eu/resource/authority/country/BEL>
-    <http://publications.europa.eu/resource/authority/country/BGR>
-    <http://publications.europa.eu/resource/authority/country/CYP>
-    <http://publications.europa.eu/resource/authority/country/CZE>
-    <http://publications.europa.eu/resource/authority/country/DNK>
-    <http://publications.europa.eu/resource/authority/country/DEU>
-    <http://publications.europa.eu/resource/authority/country/EST>
-    <http://publications.europa.eu/resource/authority/country/ESP>
-    <http://publications.europa.eu/resource/authority/country/FIN>
-    <http://publications.europa.eu/resource/authority/country/FRA>
-    <http://publications.europa.eu/resource/authority/country/HRV>
-    <http://publications.europa.eu/resource/authority/country/HUN>
-    <http://publications.europa.eu/resource/authority/country/IRL>
-    <http://publications.europa.eu/resource/authority/country/ITA>
-    <http://publications.europa.eu/resource/authority/country/LUX>
-    <http://publications.europa.eu/resource/authority/country/LVA>
-    <http://publications.europa.eu/resource/authority/country/LTU>
-    <http://publications.europa.eu/resource/authority/country/MLT>
-    <http://publications.europa.eu/resource/authority/country/NLD>
-    <http://publications.europa.eu/resource/authority/country/NOR>
-    <http://publications.europa.eu/resource/authority/country/PRT>
-    <http://publications.europa.eu/resource/authority/country/ROU>
-    <http://publications.europa.eu/resource/authority/country/SWE>
-    <http://publications.europa.eu/resource/authority/country/SVN>
-  );
+  sh:in _:datasetCountryList;
   dash:viewer dash:EnumSelectViewer;
   dash:editor dash:EnumSelectEditor .
 
@@ -284,8 +259,84 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:name "language"@en;
   sh:description "A language of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:in _:datasetCountryList;
+  dash:viewer dash:EnumSelectViewer;
+  dash:editor dash:EnumSelectEditor .
+
+_:datasetCountryList rdf:first <http://publications.europa.eu/resource/authority/country/BEL>;
+  rdf:rest _:datasetCountryListRest1 .
+
+_:datasetCountryListRest1 rdf:first <http://publications.europa.eu/resource/authority/country/BGR>;
+  rdf:rest _:datasetCountryListRest2 .
+
+_:datasetCountryListRest2 rdf:first <http://publications.europa.eu/resource/authority/country/CYP>;
+  rdf:rest _:datasetCountryListRest3 .
+
+_:datasetCountryListRest3 rdf:first <http://publications.europa.eu/resource/authority/country/CZE>;
+  rdf:rest _:datasetCountryListRest4 .
+
+_:datasetCountryListRest4 rdf:first <http://publications.europa.eu/resource/authority/country/DNK>;
+  rdf:rest _:datasetCountryListRest5 .
+
+_:datasetCountryListRest5 rdf:first <http://publications.europa.eu/resource/authority/country/DEU>;
+  rdf:rest _:datasetCountryListRest6 .
+
+_:datasetCountryListRest6 rdf:first <http://publications.europa.eu/resource/authority/country/EST>;
+  rdf:rest _:datasetCountryListRest7 .
+
+_:datasetCountryListRest7 rdf:first <http://publications.europa.eu/resource/authority/country/ESP>;
+  rdf:rest _:datasetCountryListRest8 .
+
+_:datasetCountryListRest8 rdf:first <http://publications.europa.eu/resource/authority/country/FIN>;
+  rdf:rest _:datasetCountryListRest9 .
+
+_:datasetCountryListRest9 rdf:first <http://publications.europa.eu/resource/authority/country/FRA>;
+  rdf:rest _:datasetCountryListRest10 .
+
+_:datasetCountryListRest10 rdf:first <http://publications.europa.eu/resource/authority/country/HRV>;
+  rdf:rest _:datasetCountryListRest11 .
+
+_:datasetCountryListRest11 rdf:first <http://publications.europa.eu/resource/authority/country/HUN>;
+  rdf:rest _:datasetCountryListRest12 .
+
+_:datasetCountryListRest12 rdf:first <http://publications.europa.eu/resource/authority/country/IRL>;
+  rdf:rest _:datasetCountryListRest13 .
+
+_:datasetCountryListRest13 rdf:first <http://publications.europa.eu/resource/authority/country/ITA>;
+  rdf:rest _:datasetCountryListRest14 .
+
+_:datasetCountryListRest14 rdf:first <http://publications.europa.eu/resource/authority/country/LUX>;
+  rdf:rest _:datasetCountryListRest15 .
+
+_:datasetCountryListRest15 rdf:first <http://publications.europa.eu/resource/authority/country/LVA>;
+  rdf:rest _:datasetCountryListRest16 .
+
+_:datasetCountryListRest16 rdf:first <http://publications.europa.eu/resource/authority/country/LTU>;
+  rdf:rest _:datasetCountryListRest17 .
+
+_:datasetCountryListRest17 rdf:first <http://publications.europa.eu/resource/authority/country/MLT>;
+  rdf:rest _:datasetCountryListRest18 .
+
+_:datasetCountryListRest18 rdf:first <http://publications.europa.eu/resource/authority/country/NLD>;
+  rdf:rest _:datasetCountryListRest19 .
+
+_:datasetCountryListRest19 rdf:first <http://publications.europa.eu/resource/authority/country/NOR>;
+  rdf:rest _:datasetCountryListRest20 .
+
+_:datasetCountryListRest20 rdf:first <http://publications.europa.eu/resource/authority/country/PRT>;
+  rdf:rest _:datasetCountryListRest21 .
+
+_:datasetCountryListRest21 rdf:first <http://publications.europa.eu/resource/authority/country/ROU>;
+  rdf:rest _:datasetCountryListRest22 .
+
+_:datasetCountryListRest22 rdf:first <http://publications.europa.eu/resource/authority/country/SWE>;
+  rdf:rest _:datasetCountryListRest23 .
+
+_:datasetCountryListRest23 rdf:first <http://publications.europa.eu/resource/authority/country/SVN>;
+  rdf:rest _:datasetCountryListRest24 .
+
+_:datasetCountryListRest24 rdf:first <http://publications.europa.eu/resource/authority/country/GBR>;
+  rdf:rest rdf:nil .
 
 <http://data.gdi.eu/core/p2/DatasetShape#legal-basis> sh:path dpv:hasLegalBasis;
   sh:name "legal basis"@en;
