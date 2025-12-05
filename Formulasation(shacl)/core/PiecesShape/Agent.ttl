@@ -51,8 +51,35 @@ gdi:AgentShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
+  sh:in (
+    <http://publications.europa.eu/resource/authority/country/GBR>
+    <http://publications.europa.eu/resource/authority/country/BEL>
+    <http://publications.europa.eu/resource/authority/country/BGR>
+    <http://publications.europa.eu/resource/authority/country/CYP>
+    <http://publications.europa.eu/resource/authority/country/CZE>
+    <http://publications.europa.eu/resource/authority/country/DNK>
+    <http://publications.europa.eu/resource/authority/country/DEU>
+    <http://publications.europa.eu/resource/authority/country/EST>
+    <http://publications.europa.eu/resource/authority/country/ESP>
+    <http://publications.europa.eu/resource/authority/country/FIN>
+    <http://publications.europa.eu/resource/authority/country/FRA>
+    <http://publications.europa.eu/resource/authority/country/HRV>
+    <http://publications.europa.eu/resource/authority/country/HUN>
+    <http://publications.europa.eu/resource/authority/country/IRL>
+    <http://publications.europa.eu/resource/authority/country/ITA>
+    <http://publications.europa.eu/resource/authority/country/LUX>
+    <http://publications.europa.eu/resource/authority/country/LVA>
+    <http://publications.europa.eu/resource/authority/country/LTU>
+    <http://publications.europa.eu/resource/authority/country/MLT>
+    <http://publications.europa.eu/resource/authority/country/NLD>
+    <http://publications.europa.eu/resource/authority/country/NOR>
+    <http://publications.europa.eu/resource/authority/country/PRT>
+    <http://publications.europa.eu/resource/authority/country/ROU>
+    <http://publications.europa.eu/resource/authority/country/SWE>
+    <http://publications.europa.eu/resource/authority/country/SVN>
+  );
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
   sh:name "email"@en;
