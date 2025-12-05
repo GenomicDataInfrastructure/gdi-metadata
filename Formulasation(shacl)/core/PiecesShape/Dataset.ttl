@@ -116,10 +116,21 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
+gdi:StandardExternallyGoverned a dct:Standard;
+  rdfs:label "Externally governed"@en .
+
+gdi:Standard1MGCompliant a dct:Standard;
+  rdfs:label "1+MG compliant"@en .
+
+gdi:Standard1MGCohort a dct:Standard;
+  rdfs:label "1+MG cohort"@en .
+
 <http://data.gdi.eu/core/p2/DatasetShape#conforms-to> sh:path dct:conformsTo;
   sh:name "conforms to"@en;
   sh:description "An implementing rule or other specification"@en;
+  sh:class dct:Standard;
   sh:nodeKind sh:IRI;
+  sh:in ( gdi:StandardExternallyGoverned gdi:Standard1MGCompliant gdi:Standard1MGCohort );
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
