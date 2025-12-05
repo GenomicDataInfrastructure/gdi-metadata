@@ -16,7 +16,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -28,28 +28,28 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:AgentShapeAgentShape a owl:Ontology;
+gdi:AgentShapeAgentShape a owl:Ontology;
   rdfs:label "Agent class"@en;
   rdfs:comment "Excel template for Agent class"@en;
   dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1";
   dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
 
-hri:AgentShape a sh:NodeShape;
+gdi:AgentShape a sh:NodeShape;
   rdfs:label "Agent"@en;
   sh:targetClass foaf:Agent;
-  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
-    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
+  sh:property <http://data.gdi.eu/core/p2/AgentShape#dct:spatial>, <http://data.gdi.eu/core/p2/AgentShape#foaf:mbox>,
+    <http://data.gdi.eu/core/p2/AgentShape#dct:identifier>, <http://data.gdi.eu/core/p2/AgentShape#foaf:name>,
+    <http://data.gdi.eu/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.gdi.eu/core/p2/AgentShape#healthdcatap:publishertype>,
+    <http://data.gdi.eu/core/p2/AgentShape#dct:type>, <http://data.gdi.eu/core/p2/AgentShape#foaf:homepage> .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
+<http://data.gdi.eu/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
+<http://data.gdi.eu/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
   sh:name "email"@en;
   sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme. For example: mailto:info@example.com"@en;
   sh:minCount 1;
@@ -59,7 +59,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
+<http://data.gdi.eu/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "A unique identifier of the agent."@en;
   sh:minCount 1;
@@ -67,7 +67,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> sh:path foaf:name;
+<http://data.gdi.eu/core/p2/AgentShape#foaf:name> sh:path foaf:name;
   sh:name "name"@en;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
@@ -76,7 +76,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
+<http://data.gdi.eu/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
   sh:name "publisher note"@en;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
@@ -85,7 +85,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
+<http://data.gdi.eu/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
   sh:name "publisher type"@en;
   sh:description "A type of organisation that makes the Dataset available"@en;
   sh:maxCount 1;
@@ -93,7 +93,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
+<http://data.gdi.eu/core/p2/AgentShape#dct:type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
   sh:maxCount 1;
@@ -101,7 +101,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
+<http://data.gdi.eu/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "URL"@en;
   sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
   sh:minCount 1;

@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -35,28 +35,28 @@
   owl:versionInfo "0.1";
   dct:modified "2025-09-16T09:23:35.310Z"^^xsd:dateTime .
 
-hri:DistributionShape a sh:NodeShape;
+gdi:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
   sh:targetClass dcat:Distribution;
-  sh:property <http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessService>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessURL>, <http://data.health-ri.nl/core/p2/DistributionShape#dcatap:applicableLegislation>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:byteSize>, <http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:compressFormat>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:description>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#foaf:page>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:downloadURL>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:format>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:language>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:license>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:mediaType>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:modified>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:rights>, <http://data.health-ri.nl/core/p2/DistributionShape#adms:status>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> .
+  sh:property <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL>, <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:byteSize>, <http://data.gdi.eu/core/p2/DistributionShape#spdx:checksum>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:compressFormat>, <http://data.gdi.eu/core/p2/DistributionShape#dct:description>,
+    <http://data.gdi.eu/core/p2/DistributionShape#foaf:page>, <http://data.gdi.eu/core/p2/DistributionShape#dcat:downloadURL>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:format>, <http://data.gdi.eu/core/p2/DistributionShape#dct:language>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:license>, <http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:mediaType>, <http://data.gdi.eu/core/p2/DistributionShape#dct:modified>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:packageFormat>, <http://data.gdi.eu/core/p2/DistributionShape#dct:issued>,
+    <http://data.gdi.eu/core/p2/DistributionShape#healthdcatap:retentionperiod>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:rights>, <http://data.gdi.eu/core/p2/DistributionShape#adms:status>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:temporalResolution>, <http://data.gdi.eu/core/p2/DistributionShape#dct:title> .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
   sh:name "access service"@en;
   sh:maxCount 1;
   sh:class dcat:DataService .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
   sh:name "access url"@en;
   sh:description "The resource at the access URL may contain information about how to get the Dataset."@en;
   sh:minCount 1;
@@ -65,14 +65,14 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcatap:applicableLegislation>
+<http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>
   sh:path dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:byteSize> sh:path dcat:byteSize;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:byteSize> sh:path dcat:byteSize;
   sh:name "byte size"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -82,15 +82,15 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum> sh:path spdx:checksum;
+<http://data.gdi.eu/core/p2/DistributionShape#spdx:checksum> sh:path spdx:checksum;
   sh:name "checksum"@en;
   sh:description "The checksum is related to the downloadURL."@en;
   sh:maxCount 1;
-  sh:node hri:ChecksumShape;
+  sh:node gdi:ChecksumShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:compressFormat> sh:path dcat:compressFormat;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:compressFormat> sh:path dcat:compressFormat;
   sh:name "compression format"@en;
   sh:description "It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."@en;
   sh:maxCount 1;
@@ -98,7 +98,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:description> sh:path dct:description;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
@@ -106,20 +106,20 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#foaf:page> sh:path foaf:page;
+<http://data.gdi.eu/core/p2/DistributionShape#foaf:page> sh:path foaf:page;
   sh:name "documentation"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:downloadURL> sh:path dcat:downloadURL;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:downloadURL> sh:path dcat:downloadURL;
   sh:name "download URL"@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:format> sh:path dct:format;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -127,14 +127,14 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:language> sh:path dct:language;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description "This property can be repeated if the metadata is provided in multiple languages."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:license> sh:path dct:license;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:license> sh:path dct:license;
   sh:name "license"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -142,20 +142,20 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "linked schemas"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:mediaType> sh:path dcat:mediaType;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:mediaType> sh:path dcat:mediaType;
   sh:name "media type"@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:modified> sh:path dct:modified;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
@@ -163,7 +163,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat> sh:path dcat:packageFormat;
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:packageFormat> sh:path dcat:packageFormat;
   sh:name "packaging format"@en;
   sh:description "It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."@en;
   sh:maxCount 1;
@@ -171,7 +171,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:issued> sh:path dct:issued;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
@@ -180,15 +180,15 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
+<http://data.gdi.eu/core/p2/DistributionShape#healthdcatap:retentionperiod>
   sh:path healthdcatap:retentionperiod;
   sh:name "retention period"@en;
   sh:maxCount 1;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node gdi:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:rights> sh:path dct:rights;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
@@ -197,7 +197,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#adms:status> sh:path adms:status;
+<http://data.gdi.eu/core/p2/DistributionShape#adms:status> sh:path adms:status;
   sh:name "status"@en;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
@@ -218,7 +218,7 @@ _:63db696725d34edebb948ae5f263a6624 rdf:first status:WITHDRAWN;
 _:63db696725d34edebb948ae5f263a6625 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:temporalResolution> sh:path
     dcat:temporalResolution;
   sh:name "temporal resolution"@en;
   sh:maxCount 1;
@@ -226,7 +226,7 @@ _:63db696725d34edebb948ae5f263a6625 rdf:first status:DEPRECATED;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dct:title;
+<http://data.gdi.eu/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "This property can be repeated for parallel language versions of the title."@en;
   sh:minCount 1;

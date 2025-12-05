@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -27,19 +27,19 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-ChecksumShape a owl:Ontology;
+gdi:aux-ChecksumShape a owl:Ontology;
   rdfs:label "Checksum"@en;
   rdfs:comment "Health-RI v2 Checksum."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-07-14T08:12:23.310Z"^^xsd:dateTime .
 
-hri:ChecksumShape a sh:NodeShape;
+gdi:ChecksumShape a sh:NodeShape;
   rdfs:label "Checksum"@en;
   sh:targetClass spdx:Checksum;
-  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+  sh:property <http://data.gdi.eu/core/p2/ChecksumShape#spdx:algorithm>, <http://data.gdi.eu/core/p2/ChecksumShape#spdx:checksumValue> .
 
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
+<http://data.gdi.eu/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
   sh:name "algorithm"@en;
   sh:description "The algorithm used to produce the subject Checksum"@en;
   sh:minCount 1;
@@ -48,7 +48,7 @@ hri:ChecksumShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
+<http://data.gdi.eu/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
   sh:name "checksum value"@en;
   sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
   sh:minCount 1;

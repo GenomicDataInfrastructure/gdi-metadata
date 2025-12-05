@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -27,19 +27,19 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-PeriodOfTimeShape a owl:Ontology;
+gdi:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:label "Period of Time"@en;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-09-09T15:41:10.000Z"^^xsd:dateTime .
 
-hri:PeriodOfTimeShape a sh:NodeShape;
+gdi:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
   sh:targetClass dct:PeriodOfTime;
-  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
+  sh:property <http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:startDate> .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+<http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
   sh:name "end date"@en;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
@@ -49,7 +49,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+<http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
   sh:name "start date"@en;
   sh:description "The start of the period."@en;
   sh:maxCount 1;

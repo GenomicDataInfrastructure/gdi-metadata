@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -34,21 +34,21 @@
   owl:versionInfo "0.1";
   dct:modified "2025-09-09T13:37:52.800Z"^^xsd:dateTime .
 
-hri:CatalogShape a sh:NodeShape;
+gdi:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
   sh:targetClass dcat:Catalog;
-  sh:property <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:description>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:license>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> .
+  sh:property <http://data.gdi.eu/core/p2/CatalogShape#dcatap:applicableLegislation>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dcat:catalog>, <http://data.gdi.eu/core/p2/CatalogShape#dcat:contactPoint>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:creator>, <http://data.gdi.eu/core/p2/CatalogShape#dcat:dataset>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:description>, <http://data.gdi.eu/core/p2/CatalogShape#dct:spatial>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:hasPart>, <http://data.gdi.eu/core/p2/CatalogShape#foaf:homepage>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:language>, <http://data.gdi.eu/core/p2/CatalogShape#dct:license>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:modified>, <http://data.gdi.eu/core/p2/CatalogShape#dct:publisher>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dct:issued>, <http://data.gdi.eu/core/p2/CatalogShape#dct:rights>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dcat:service>, <http://data.gdi.eu/core/p2/CatalogShape#dct:temporal>,
+    <http://data.gdi.eu/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.gdi.eu/core/p2/CatalogShape#dct:title> .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
+<http://data.gdi.eu/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
   sh:description "The legislation that mandates the creation or management of the Catalog."@en;
@@ -56,35 +56,35 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
+<http://data.gdi.eu/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalog"@en;
   sh:description "This property serves to connect the different catalogs with each other."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
+<http://data.gdi.eu/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact point"@en;
   sh:description """This property points to a contact point (department or person) that can answer questions about the catalogue. Details on how to describe these are provided under class vcard:Kind.
 Whenever possible, use a general contact information (for example from a department) instead of contact information of an individual."""@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
+  sh:node gdi:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "Note that the Health-RI model diverges from DCAT-AP NL here, which reduces the maximum number of creators to 1. The Health-RI model allows specification of multiple creators of a catalogue."@en;
-  sh:node hri:AgentShape;
+  sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
+<http://data.gdi.eu/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
   sh:name "dataset"@en;
   sh:description "Each catalog contains one or more datasets. This property serves to link datasets to a catalogue. Therefore, a dataset is always contained inside a catalogue."@en .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "Briefly describe the catalog and what it contains. You can repeat this in multiple languages."@en;
   sh:minCount 1;
@@ -93,14 +93,14 @@ Whenever possible, use a general contact information (for example from a departm
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial> sh:path dct:spatial;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
   sh:description """Use this property to establish another catalogue in this catalogue.
 Note that deeply nested structures should be avoided, and can currently not be displayed in the National Health Data Catalogue."""@en;
@@ -108,7 +108,7 @@ Note that deeply nested structures should be avoided, and can currently not be d
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
+<http://data.gdi.eu/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
   sh:description "The home page of the catalogue, if available."@en;
   sh:maxCount 1;
@@ -116,7 +116,7 @@ Note that deeply nested structures should be avoided, and can currently not be d
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description """The value of this property must be an IRI from the provided controlled vocabulary.
 For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
@@ -124,7 +124,7 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
   sh:description "The licence under which the catalogue (with resource description) is made available. In the description of distributions and data services the licences of that resources are taken up."@en;
   sh:maxCount 1;
@@ -132,7 +132,7 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:description "The most recent date on which the Catalogue was modified."@en;
   sh:maxCount 1;
@@ -141,16 +141,16 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "The organisation or individual that is holder of the intellectual property rights of a dataset. For more details about the publisher, see the class Agent. Example: Radboudumc."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
+  sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:description "The date of formal issuance (e.g., publication) of the Catalogue."@en;
   sh:maxCount 1;
@@ -159,7 +159,7 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "The rights statement should be a free-text statement placed at a web-accessible location such that the value of this property is the IRI pointing to that statement."@en;
   sh:maxCount 1;
@@ -167,28 +167,28 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
+<http://data.gdi.eu/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
   sh:description "Some datasets may have real-time Data Services (e.g., Beacon API counting individuals). IT teams should define the relationship between the catalog and the Data Service via this property. While crucial for interoperability, this property is not relevant for end-users to collect."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "A temporal period that the Catalogue covers, if applicable."@en;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node gdi:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy> sh:path dcat:themeTaxonomy;
+<http://data.gdi.eu/core/p2/CatalogShape#dcat:themeTaxonomy> sh:path dcat:themeTaxonomy;
   sh:name "themes"@en;
   sh:description "This property refers to a knowledge organisation system used to classify the Catalogue's Datasets. It must have at least the value NAL:data-theme as this is the mandatory controlled vocabulary for dcat:theme."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
+<http://data.gdi.eu/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "Provide a unique title for your catalog, which can be repeated in multiple languages. Example: Healthy Brain Study."@en;
   sh:minCount 1;

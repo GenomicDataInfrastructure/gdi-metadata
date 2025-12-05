@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -27,19 +27,19 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-RelationshipShape a owl:Ontology;
+gdi:aux-RelationshipShape a owl:Ontology;
   rdfs:label "Relationship"@en;
   rdfs:comment "Health-RI v2 Relationship"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-07-14T08:12:41.750Z"^^xsd:dateTime .
 
-hri:RelationshipShape a sh:NodeShape;
+gdi:RelationshipShape a sh:NodeShape;
   rdfs:label "Relation"@en;
   sh:targetClass dcat:Relationship;
-  sh:property <http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole>, <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> .
+  sh:property <http://data.gdi.eu/core/p2/RelationshipShape#dcat:hadRole>, <http://data.gdi.eu/core/p2/RelationshipShape#dct:relation> .
 
-<http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
+<http://data.gdi.eu/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
   sh:name "had role"@en;
   sh:description "The nature of the relationship, as indicated via a value from the controlled vocabulary."@en;
   sh:minCount 1;
@@ -47,7 +47,7 @@ hri:RelationshipShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
+<http://data.gdi.eu/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
   sh:name "relation"@en;
   sh:description "A resource with a relationship to the cataloged resource."@en;
   sh:minCount 1;

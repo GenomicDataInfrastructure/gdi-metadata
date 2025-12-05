@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -27,19 +27,19 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-IdentifierShape a owl:Ontology;
+gdi:aux-IdentifierShape a owl:Ontology;
   rdfs:label "Identifier"@en;
   rdfs:comment "Health-RI v2 Identifier"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-07-29T14:03:03.240Z"^^xsd:dateTime .
 
-hri:IdentifierShape a sh:NodeShape;
+gdi:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;
   sh:targetClass adms:Identifier;
-  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
+  sh:property <http://data.gdi.eu/core/p2/IdentifierShape#skos:notation>, <http://data.gdi.eu/core/p2/IdentifierShape#adms:schemaAgency> .
 
-<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
+<http://data.gdi.eu/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
   sh:name "notation"@en;
   sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
   sh:minCount 1;
@@ -49,7 +49,7 @@ hri:IdentifierShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
+<http://data.gdi.eu/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
   sh:name "schema agency"@en;
   sh:description "The name of the agency that issued the identifier."@en;
   sh:maxCount 1;

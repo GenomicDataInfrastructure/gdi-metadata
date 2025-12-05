@@ -17,7 +17,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -29,20 +29,20 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-QualityCertificateShape a owl:Ontology;
+gdi:aux-QualityCertificateShape a owl:Ontology;
   rdfs:label "Quality Certificate"@en;
   rdfs:comment "Health-RI v2 Quality Certificate"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-07-14T08:12:39.650Z"^^xsd:dateTime .
 
-hri:QualityCertificateShape a sh:NodeShape;
+gdi:QualityCertificateShape a sh:NodeShape;
   rdfs:label "Quality Certificate"@en;
   sh:targetClass dqv:QualityCertificate;
-  sh:property <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget>,
-    <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> .
+  sh:property <http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasTarget>,
+    <http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasBody> .
 
-<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
+<http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
   sh:name "target"@en;
   sh:description "The identifier of the described resource targetet by the quality certificate."@en;
   sh:maxCount 1;
@@ -50,7 +50,7 @@ hri:QualityCertificateShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
+<http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
   sh:name "body"@en;
   sh:description "The (web)location of the quality certificate."@en;
   sh:maxCount 1;

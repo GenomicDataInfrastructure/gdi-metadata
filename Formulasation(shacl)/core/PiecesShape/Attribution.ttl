@@ -15,7 +15,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -27,27 +27,27 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:aux-AttributionShape a owl:Ontology;
+gdi:aux-AttributionShape a owl:Ontology;
   rdfs:label "Attribution"@en;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-09-04T13:26:37.470Z"^^xsd:dateTime .
 
-hri:AttributionShape a sh:NodeShape;
+gdi:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
   sh:targetClass prov:Attribution;
-  sh:property <http://data.health-ri.nl/core/p2/AttributionShape#prov:agent>, <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> .
+  sh:property <http://data.gdi.eu/core/p2/AttributionShape#prov:agent>, <http://data.gdi.eu/core/p2/AttributionShape#dcat:hadRole> .
 
-<http://data.health-ri.nl/core/p2/AttributionShape#prov:agent> sh:path prov:agent;
+<http://data.gdi.eu/core/p2/AttributionShape#prov:agent> sh:path prov:agent;
   sh:name "agent"@en;
   sh:description "The agent that has a specific role with the described resource."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
+  sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
+<http://data.gdi.eu/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
   sh:name "role"@en;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
