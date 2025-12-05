@@ -52,6 +52,7 @@ gdi:AgentShape a sh:NodeShape;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
   sh:in (
+    <http://publications.europa.eu/resource/authority/country/GBR>
     <http://publications.europa.eu/resource/authority/country/BEL>
     <http://publications.europa.eu/resource/authority/country/BGR>
     <http://publications.europa.eu/resource/authority/country/CYP>
@@ -77,7 +78,7 @@ gdi:AgentShape a sh:NodeShape;
     <http://publications.europa.eu/resource/authority/country/SWE>
     <http://publications.europa.eu/resource/authority/country/SVN>
   );
-  dash:viewer dash:EnumSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;

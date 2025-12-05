@@ -104,7 +104,7 @@ Whenever possible, use a general contact information (for example from a departm
   sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
   sh:nodeKind sh:IRI;
   sh:in _:catalogCountryList;
-  dash:viewer dash:EnumSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
@@ -129,7 +129,7 @@ Note that deeply nested structures should be avoided, and can currently not be d
 For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
   sh:nodeKind sh:IRI;
   sh:in _:catalogCountryList;
-  dash:viewer dash:EnumSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
 _:catalogCountryList rdf:first <http://publications.europa.eu/resource/authority/country/BEL>;

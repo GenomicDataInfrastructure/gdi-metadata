@@ -188,7 +188,7 @@ gdi:Standard1MGCohort a dct:Standard;
   sh:description "A geographic region that is covered by the Dataset. This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
   sh:in _:datasetCountryList;
-  dash:viewer dash:EnumSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#has-version> sh:path dcat:hasVersion;
@@ -220,7 +220,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:nodeKind sh:IRI;
   sh:minCount 1;
   sh:in ( gdi:HealthCategoryHumanGenetic gdi:HealthCategoryHumanEpigenomic gdi:HealthCategoryHumanGenomic );
-  dash:viewer dash:MultiSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:MultiSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#identifier> sh:path dct:identifier;
@@ -260,7 +260,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:description "A language of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
   sh:in _:datasetCountryList;
-  dash:viewer dash:EnumSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
 _:datasetCountryList rdf:first <http://publications.europa.eu/resource/authority/country/BEL>;
@@ -404,7 +404,7 @@ _:datasetCountryListRest24 rdf:first <http://publications.europa.eu/resource/aut
   sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy, for example https://w3id.org/dpv/dpv-pd#Gender"@en;
   sh:nodeKind sh:IRI;
   sh:in ( dpv-pd:Genetic dpv-pd:Biometric dpv-pd:Health );
-  dash:viewer dash:MultiSelectViewer;
+  dash:viewer dash:URIViewer;
   dash:editor dash:MultiSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#population-coverage> sh:path healthdcatap:populationCoverage;

@@ -164,8 +164,33 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:nodeKind sh:IRI;
+  sh:in (
+    <http://publications.europa.eu/resource/authority/language/ENG>
+    <http://publications.europa.eu/resource/authority/language/NLD>
+    <http://publications.europa.eu/resource/authority/language/FRA>
+    <http://publications.europa.eu/resource/authority/language/DEU>
+    <http://publications.europa.eu/resource/authority/language/SPA>
+    <http://publications.europa.eu/resource/authority/language/POR>
+    <http://publications.europa.eu/resource/authority/language/ITA>
+    <http://publications.europa.eu/resource/authority/language/SWE>
+    <http://publications.europa.eu/resource/authority/language/FIN>
+    <http://publications.europa.eu/resource/authority/language/EST>
+    <http://publications.europa.eu/resource/authority/language/LAV>
+    <http://publications.europa.eu/resource/authority/language/LIT>
+    <http://publications.europa.eu/resource/authority/language/SLV>
+    <http://publications.europa.eu/resource/authority/language/HUN>
+    <http://publications.europa.eu/resource/authority/language/CES>
+    <http://publications.europa.eu/resource/authority/language/DAN>
+    <http://publications.europa.eu/resource/authority/language/BUL>
+    <http://publications.europa.eu/resource/authority/language/RON>
+    <http://publications.europa.eu/resource/authority/language/MLT>
+    <http://publications.europa.eu/resource/authority/language/ELL>
+    <http://publications.europa.eu/resource/authority/language/HRV>
+    <http://publications.europa.eu/resource/authority/language/LTZ>
+    <http://publications.europa.eu/resource/authority/language/NOR>
+  );
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:license> sh:path dct:license;
   sh:name "License"@en;
