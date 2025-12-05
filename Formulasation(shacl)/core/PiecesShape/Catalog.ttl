@@ -103,8 +103,34 @@ Whenever possible, use a general contact information (for example from a departm
   sh:name "geographical coverage"@en;
   sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:in (
+    <http://publications.europa.eu/resource/authority/country/BEL>
+    <http://publications.europa.eu/resource/authority/country/BGR>
+    <http://publications.europa.eu/resource/authority/country/CYP>
+    <http://publications.europa.eu/resource/authority/country/CZE>
+    <http://publications.europa.eu/resource/authority/country/DNK>
+    <http://publications.europa.eu/resource/authority/country/DEU>
+    <http://publications.europa.eu/resource/authority/country/EST>
+    <http://publications.europa.eu/resource/authority/country/ESP>
+    <http://publications.europa.eu/resource/authority/country/FIN>
+    <http://publications.europa.eu/resource/authority/country/FRA>
+    <http://publications.europa.eu/resource/authority/country/HRV>
+    <http://publications.europa.eu/resource/authority/country/HUN>
+    <http://publications.europa.eu/resource/authority/country/IRL>
+    <http://publications.europa.eu/resource/authority/country/ITA>
+    <http://publications.europa.eu/resource/authority/country/LUX>
+    <http://publications.europa.eu/resource/authority/country/LVA>
+    <http://publications.europa.eu/resource/authority/country/LTU>
+    <http://publications.europa.eu/resource/authority/country/MLT>
+    <http://publications.europa.eu/resource/authority/country/NLD>
+    <http://publications.europa.eu/resource/authority/country/NOR>
+    <http://publications.europa.eu/resource/authority/country/PRT>
+    <http://publications.europa.eu/resource/authority/country/ROU>
+    <http://publications.europa.eu/resource/authority/country/SWE>
+    <http://publications.europa.eu/resource/authority/country/SVN>
+  );
+  dash:viewer dash:EnumSelectViewer;
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;

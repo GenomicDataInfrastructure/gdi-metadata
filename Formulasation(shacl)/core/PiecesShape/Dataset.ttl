@@ -74,6 +74,7 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
   sh:in _:63db696725d34edebb948ae5f263a6626;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
@@ -98,6 +99,7 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
   sh:name "applicable legislation"@en;
   sh:description "The legislation that mandates the creation or management of the Dataset. The default value is the ELI of the EHDS."@en;
   sh:nodeKind sh:IRI;
+  sh:minCount 1;
   sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -132,7 +134,7 @@ gdi:Standard1MGCohort a dct:Standard;
   sh:nodeKind sh:IRI;
   sh:in ( gdi:StandardExternallyGoverned gdi:Standard1MGCompliant gdi:Standard1MGCohort );
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#contact-point> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
@@ -145,6 +147,7 @@ gdi:Standard1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
+  sh:minCount 1;
   sh:node gdi:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -184,8 +187,34 @@ gdi:Standard1MGCohort a dct:Standard;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset. This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:in (
+    <http://publications.europa.eu/resource/authority/country/BEL>
+    <http://publications.europa.eu/resource/authority/country/BGR>
+    <http://publications.europa.eu/resource/authority/country/CYP>
+    <http://publications.europa.eu/resource/authority/country/CZE>
+    <http://publications.europa.eu/resource/authority/country/DNK>
+    <http://publications.europa.eu/resource/authority/country/DEU>
+    <http://publications.europa.eu/resource/authority/country/EST>
+    <http://publications.europa.eu/resource/authority/country/ESP>
+    <http://publications.europa.eu/resource/authority/country/FIN>
+    <http://publications.europa.eu/resource/authority/country/FRA>
+    <http://publications.europa.eu/resource/authority/country/HRV>
+    <http://publications.europa.eu/resource/authority/country/HUN>
+    <http://publications.europa.eu/resource/authority/country/IRL>
+    <http://publications.europa.eu/resource/authority/country/ITA>
+    <http://publications.europa.eu/resource/authority/country/LUX>
+    <http://publications.europa.eu/resource/authority/country/LVA>
+    <http://publications.europa.eu/resource/authority/country/LTU>
+    <http://publications.europa.eu/resource/authority/country/MLT>
+    <http://publications.europa.eu/resource/authority/country/NLD>
+    <http://publications.europa.eu/resource/authority/country/NOR>
+    <http://publications.europa.eu/resource/authority/country/PRT>
+    <http://publications.europa.eu/resource/authority/country/ROU>
+    <http://publications.europa.eu/resource/authority/country/SWE>
+    <http://publications.europa.eu/resource/authority/country/SVN>
+  );
+  dash:viewer dash:EnumSelectViewer;
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#has-version> sh:path dcat:hasVersion;
   sh:name "has version"@en;
@@ -201,19 +230,32 @@ gdi:Standard1MGCohort a dct:Standard;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
+gdi:HealthCategoryHumanGenetic a skos:Concept;
+  skos:prefLabel "Human genetic data"@en .
+
+gdi:HealthCategoryHumanEpigenomic a skos:Concept;
+  skos:prefLabel "Human epigenomic data"@en .
+
+gdi:HealthCategoryHumanGenomic a skos:Concept;
+  skos:prefLabel "Human genomic data"@en .
+
 <http://data.gdi.eu/core/p2/DatasetShape#health-catagory> sh:path healthdcatap:healthCatagory;
   sh:name "health catagory"@en;
   sh:description "A category of the Dataset or tag describing the Dataset."@en;
   sh:nodeKind sh:IRI;
   sh:minCount 1;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:in ( gdi:HealthCategoryHumanGenetic gdi:HealthCategoryHumanEpigenomic gdi:HealthCategoryHumanGenomic );
+  dash:viewer dash:MultiSelectViewer;
+  dash:editor dash:MultiSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
   sh:minCount 1;
+  sh:datatype xsd:string;
   sh:nodeKind sh:Literal;
+  sh:pattern "^(GOE|GDI)-[A-Z]{2}-[0-9]+$";
+  sh:message "Use GOE-CC-NNN… or GDI-CC-NNN… (CC = two-letter country code, NNN… = digits)."@en;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -234,7 +276,6 @@ gdi:Standard1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
   sh:description "A keyword or tag describing the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
@@ -311,8 +352,9 @@ gdi:Standard1MGCohort a dct:Standard;
   sh:name "personal data"@en;
   sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy, for example https://w3id.org/dpv/dpv-pd#Gender"@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
-  dash:editor dash:URIEditor .
+  sh:in ( dpv-pd:Genetic dpv-pd:Biometric dpv-pd:Health );
+  dash:viewer dash:MultiSelectViewer;
+  dash:editor dash:MultiSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#population-coverage> sh:path healthdcatap:populationCoverage;
   sh:name "population coverage"@en;
@@ -434,7 +476,6 @@ gdi:Standard1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

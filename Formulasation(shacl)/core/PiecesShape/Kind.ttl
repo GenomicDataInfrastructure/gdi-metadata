@@ -57,6 +57,7 @@ gdi:KindShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
   sh:name "has email"@en;
   sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
+  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";

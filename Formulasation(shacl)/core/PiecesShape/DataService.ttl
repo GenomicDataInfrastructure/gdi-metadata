@@ -18,6 +18,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gdi: <http://data.gdi.eu/core/p2/> .
@@ -57,11 +58,23 @@ gdi:DataServiceShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "Access Rights"@en;
-  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. Use one of the following values (:public, :restricted, :non-public)."@en;
+  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
+  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  sh:in _:dserviceAccessRightsList;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:dserviceAccessRightsList rdf:first eu:PUBLIC;
+  rdf:rest _:dserviceAccessRightsListRest1 .
+
+_:dserviceAccessRightsListRest1 rdf:first eu:RESTRICTED;
+  rdf:rest _:dserviceAccessRightsListRest2 .
+
+_:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
+  rdf:rest rdf:nil .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
@@ -194,6 +207,7 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme> sh:path dcat:theme;
   sh:name "theme"@en;
   sh:description "A Data Service may be associated with multiple themes."@en;
+    sh:defaultValue <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
