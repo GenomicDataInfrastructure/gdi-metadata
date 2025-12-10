@@ -31,6 +31,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix euds: <http://publications.europa.eu/resource/authority/dataset-status/> .
+@prefix type: <https://publications.europa.eu/resource/authority/dataset-type/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -513,7 +514,8 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:description "A type of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:in ( type:SYNTHETIC_DATA );
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#version> sh:path dcat:version;
   sh:name "version"@en;
