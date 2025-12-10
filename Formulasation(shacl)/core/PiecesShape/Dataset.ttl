@@ -382,7 +382,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:nodeKind sh:IRI;
   sh:in ( dpv-pd:Genetic dpv-pd:Biometric dpv-pd:Health );
   dash:viewer dash:URIViewer;
-  dash:editor dash:MultiSelectEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#population-coverage> sh:path healthdcatap:populationCoverage;
   sh:name "population coverage"@en;
