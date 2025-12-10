@@ -20,3 +20,6 @@ Use the schema tool to push the SHACL updates to your FDP instance.
 - `schema-tool/docker-compose.yml` and `.env`: Wrapper to run the schema update tool container against a target FDP with your credentials.
 - `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`: Standard project documentation and contribution guidelines.
 
+Current SHACLs are based on:
+- GDI harmonised metadata spreadsheet: https://docs.google.com/spreadsheets/d/1HpznG8yTcs7if0xqNSpZZIGpbEe7_3ZG6_nF1YeJmSA/edit?gid=225294581#gid=225294581
+- HealthDCAT-AP 5.0: https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-5/
