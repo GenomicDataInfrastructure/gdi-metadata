@@ -30,7 +30,6 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
-@prefix euds: <http://publications.europa.eu/resource/authority/dataset-status/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -119,13 +118,13 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-gdi:ExternallyGoverned a dct:Standard;
+gdi:StandardExternallyGoverned a dct:Standard;
   rdfs:label "Externally governed"@en .
 
-gdi:1MGCompliant a dct:Standard;
+gdi:Standard1MGCompliant a dct:Standard;
   rdfs:label "1+MG compliant"@en .
 
-gdi:1MGCohort a dct:Standard;
+gdi:Standard1MGCohort a dct:Standard;
   rdfs:label "1+MG cohort"@en .
 
 <http://data.gdi.eu/core/p2/DatasetShape#conforms-to> sh:path dct:conformsTo;
@@ -133,7 +132,7 @@ gdi:1MGCohort a dct:Standard;
   sh:description "An implementing rule or other specification"@en;
   sh:class dct:Standard;
   sh:nodeKind sh:IRI;
-  sh:in ( gdi:ExternallyGoverned gdi:1MGCompliant gdi:1MGCohort );
+  sh:in ( gdi:StandardExternallyGoverned gdi:Standard1MGCompliant gdi:Standard1MGCohort );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
@@ -463,16 +462,8 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in (
-    euds:COMPLETED
-    euds:DEPRECATED
-    euds:DEVELOP
-    euds:DISCONT
-    euds:OP_DATPRO
-    euds:WITHDRAWN
-  );
-  dash:viewer dash:EnumSelectViewer;
-  dash:editor dash:EnumSelectEditor .
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#temporal-coverage> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
