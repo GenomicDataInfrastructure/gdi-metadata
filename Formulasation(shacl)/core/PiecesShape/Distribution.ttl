@@ -161,10 +161,18 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#dct:license> sh:path dct:license;
   sh:name "license"@en;
+  sh:description "Select the licence used for this distribution."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in (
+    <https://creativecommons.org/publicdomain/zero/1.0/>
+    <https://creativecommons.org/licenses/by/4.0/>
+    <https://creativecommons.org/licenses/by-sa/4.0/>
+    <https://opendatacommons.org/licenses/by/1-0/>
+    <https://opendatacommons.org/licenses/odbl/1-0/>
+  );
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "linked schemas"@en;
