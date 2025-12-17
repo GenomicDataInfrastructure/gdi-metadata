@@ -72,6 +72,8 @@ gdi:CatalogShape a sh:NodeShape;
   sh:name "Contact point"@en;
   sh:description """This property points to a contact point (department or person) that can answer questions about the catalogue. Details on how to describe these are provided under class vcard:Kind.
 Whenever possible, use a general contact information (for example from a department) instead of contact information of an individual."""@en;
+  sh:minCount 1;
+  sh:maxCount 1;
   sh:node gdi:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
