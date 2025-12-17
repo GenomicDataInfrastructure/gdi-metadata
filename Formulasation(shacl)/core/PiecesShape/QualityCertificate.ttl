@@ -50,7 +50,6 @@ gdi:QualityCertificateShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
   sh:name "target"@en;
   sh:description "The identifier of the described resource targetet by the quality certificate."@en;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -58,7 +57,6 @@ gdi:QualityCertificateShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
   sh:name "body"@en;
   sh:description "The (web)location of the quality certificate."@en;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

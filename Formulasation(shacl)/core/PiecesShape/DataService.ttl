@@ -59,7 +59,6 @@ gdi:DataServiceShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "Access Rights"@en;
   sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;

@@ -71,6 +71,7 @@ gdi:DistributionShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>
   sh:path dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
+  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

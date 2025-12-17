@@ -166,6 +166,7 @@ gdi:1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#distribution> sh:path dcat:distribution;
   sh:name "distribution"@en;
   sh:description "An available Distribution for the Dataset."@en;
+  sh:minCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -410,13 +411,6 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:name "qualified attribution"@en;
   sh:description "An Agent having some form of responsibility for the resource"@en;
   sh:node gdi:AttributionShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
-
-<http://data.gdi.eu/core/p2/DatasetShape#qualified-relation> sh:path dcat:qualifiedRelation;
-  sh:name "qualified relation"@en;
-  sh:description "A description of a relationship with another resource"@en;
-  sh:node gdi:RelationshipShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
