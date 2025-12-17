@@ -61,7 +61,7 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
     <http://data.gdi.eu/core/p2/DatasetShape#other-identifier>, <http://data.gdi.eu/core/p2/DatasetShape#personal-data>,
     <http://data.gdi.eu/core/p2/DatasetShape#population-coverage>, <http://data.gdi.eu/core/p2/DatasetShape#publisher>,
     <http://data.gdi.eu/core/p2/DatasetShape#purpose>, <http://data.gdi.eu/core/p2/DatasetShape#qualified-attribution>,
-    <http://data.gdi.eu/core/p2/DatasetShape#qualified-relation>, <http://data.gdi.eu/core/p2/DatasetShape#quality-annotation>,
+    <http://data.gdi.eu/core/p2/DatasetShape#quality-annotation>,
     <http://data.gdi.eu/core/p2/DatasetShape#release-date>, <http://data.gdi.eu/core/p2/DatasetShape#retention-period>,
     <http://data.gdi.eu/core/p2/DatasetShape#sample>, <http://data.gdi.eu/core/p2/DatasetShape#source>,
     <http://data.gdi.eu/core/p2/DatasetShape#status>, <http://data.gdi.eu/core/p2/DatasetShape#temporal-coverage>,
