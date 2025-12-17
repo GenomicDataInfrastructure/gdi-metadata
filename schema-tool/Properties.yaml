@@ -18,7 +18,6 @@ schemas:
     - "Attribution.ttl"
     - "Identifier.ttl"
     - "QualityCertificate.ttl"
-    - "Relationship.ttl"
   Dataset Series:
     - "DatasetSeries.ttl"
     - "Agent.ttl"
