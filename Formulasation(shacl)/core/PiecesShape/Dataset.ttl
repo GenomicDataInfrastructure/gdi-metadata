@@ -93,9 +93,7 @@ _:63db696725d34edebb948ae5f263a6628 rdf:first eu:NON_PUBLIC;
 <http://data.gdi.eu/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
   sh:name "analytics"@en;
   sh:description "An analytics distribution of the dataset"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:nodeKind sh:IRI .
 
 <http://data.gdi.eu/core/p2/DatasetShape#applicable-legislation> sh:path dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
@@ -167,9 +165,7 @@ gdi:1MGCohort a dct:Standard;
   sh:name "distribution"@en;
   sh:description "An available Distribution for the Dataset."@en;
   sh:minCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:nodeKind sh:IRI .
 
 <http://data.gdi.eu/core/p2/DatasetShape#documentation> sh:path foaf:page;
   sh:name "documentation"@en;
@@ -442,9 +438,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
 <http://data.gdi.eu/core/p2/DatasetShape#sample> sh:path adms:sample;
   sh:name "sample"@en;
   sh:description "A sample distribution of the dataset"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:nodeKind sh:IRI .
 
 <http://data.gdi.eu/core/p2/DatasetShape#source> sh:path dct:source;
   sh:name "source"@en;
