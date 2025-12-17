@@ -164,7 +164,6 @@ gdi:1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#distribution> sh:path dcat:distribution;
   sh:name "distribution"@en;
   sh:description "An available Distribution for the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI .
 
 <http://data.gdi.eu/core/p2/DatasetShape#documentation> sh:path foaf:page;
