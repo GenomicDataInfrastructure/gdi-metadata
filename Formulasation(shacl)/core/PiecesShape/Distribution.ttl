@@ -152,19 +152,19 @@ gdi:DistributionShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:in (
-    <http://creativecommons.org/publicdomain/mark/1.0/>
-    <https://creativecommons.org/publicdomain/zero/1.0/>
-    <https://opendatacommons.org/licenses/pddl/1-0/>
-    <https://creativecommons.org/licenses/by/4.0/>
-    <https://cdla.dev/permissive-2-0/>
-    <https://opendatacommons.org/licenses/by/1-0/>
-    <https://creativecommons.org/licenses/by-sa/4.0/>
-    <https://cdla.dev/sharing-1-0/>
-    <https://opendatacommons.org/licenses/odbl/1-0/>
-    <https://creativecommons.org/licenses/by-nc/4.0/>
-    <https://creativecommons.org/licenses/by-nd/4.0/>
-    <https://creativecommons.org/licenses/by-nc-sa/4.0/>
-    <https://creativecommons.org/licenses/by-nc-nd/4.0/>
+    <http://creativecommons.org/publicdomain/mark/1.0>
+    <http://creativecommons.org/publicdomain/zero/1.0>
+    <http://opendatacommons.org/licenses/pddl/1-0>
+    <http://creativecommons.org/licenses/by/4.0>
+    <http://cdla.dev/permissive-2-0>
+    <http://opendatacommons.org/licenses/by/1-0>
+    <http://creativecommons.org/licenses/by-sa/4.0>
+    <http://cdla.dev/sharing-1-0>
+    <http://opendatacommons.org/licenses/odbl/1-0>
+    <http://creativecommons.org/licenses/by-nc/4.0>
+    <http://creativecommons.org/licenses/by-nd/4.0>
+    <http://creativecommons.org/licenses/by-nc-sa/4.0>
+    <http://creativecommons.org/licenses/by-nc-nd/4.0>
   );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
