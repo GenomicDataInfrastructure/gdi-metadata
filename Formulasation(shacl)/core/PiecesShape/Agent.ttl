@@ -58,6 +58,8 @@ gdi:AgentShape a sh:NodeShape;
   sh:name "email"@en;
   sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme. For example: mailto:info@example.com"@en;
   sh:nodeKind sh:IRI;
+  sh:minCount 1;
+  sh:maxCount 1;
   sh:pattern "^mailto:.+@.+\\..+$";
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -106,6 +108,7 @@ gdi:AgentShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "URL"@en;
   sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;

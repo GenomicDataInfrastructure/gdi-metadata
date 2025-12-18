@@ -46,15 +46,13 @@ gdi:DataServiceShape a sh:NodeShape;
   sh:property <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights>,
     <http://data.gdi.eu/core/p2/DataServiceShape#dcatap:applicableLegislation>,
     <http://data.gdi.eu/core/p2/DataServiceShape#dct:conformsTo>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:contactPoint>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:creator>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:rights>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:description>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointDescription>,
+    <http://data.gdi.eu/core/p2/DataServiceShape#dct:creator>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:description>, 
+    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointDescription>,
     <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointURL>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:format>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcatap:hvdCategory>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword>, 
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:landingPage>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:language>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:license>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:modified>, <http://data.gdi.eu/core/p2/DataServiceShape#adms:identifier>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:servesDataset>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:title> .
+    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:landingPage>,
+    <http://data.gdi.eu/core/p2/DataServiceShape#dct:license>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher>, 
+    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:servesDataset>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme>, 
+    <http://data.gdi.eu/core/p2/DataServiceShape#dct:title> .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "Access Rights"@en;
@@ -103,12 +101,6 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:rights> sh:path dct:rights;
-  sh:name "rights"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:description> sh:path dct:description;
   sh:name "Description"@en;
   sh:description "A free-text account of the Data Service."@en;
@@ -140,12 +132,6 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.gdi.eu/core/p2/DataServiceShape#dcatap:hvdCategory> sh:path dcatap:hvdCategory;
-  sh:name "HVD Category"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
   sh:description "A keyword or tag describing the Data Service."@en;
@@ -160,37 +146,6 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:language> sh:path dct:language;
-  sh:name "language"@en;
-  sh:nodeKind sh:IRI;
-  sh:in (
-    <http://publications.europa.eu/resource/authority/language/ENG>
-    <http://publications.europa.eu/resource/authority/language/NLD>
-    <http://publications.europa.eu/resource/authority/language/FRA>
-    <http://publications.europa.eu/resource/authority/language/DEU>
-    <http://publications.europa.eu/resource/authority/language/SPA>
-    <http://publications.europa.eu/resource/authority/language/POR>
-    <http://publications.europa.eu/resource/authority/language/ITA>
-    <http://publications.europa.eu/resource/authority/language/SWE>
-    <http://publications.europa.eu/resource/authority/language/FIN>
-    <http://publications.europa.eu/resource/authority/language/EST>
-    <http://publications.europa.eu/resource/authority/language/LAV>
-    <http://publications.europa.eu/resource/authority/language/LIT>
-    <http://publications.europa.eu/resource/authority/language/SLV>
-    <http://publications.europa.eu/resource/authority/language/HUN>
-    <http://publications.europa.eu/resource/authority/language/CES>
-    <http://publications.europa.eu/resource/authority/language/DAN>
-    <http://publications.europa.eu/resource/authority/language/BUL>
-    <http://publications.europa.eu/resource/authority/language/RON>
-    <http://publications.europa.eu/resource/authority/language/MLT>
-    <http://publications.europa.eu/resource/authority/language/ELL>
-    <http://publications.europa.eu/resource/authority/language/HRV>
-    <http://publications.europa.eu/resource/authority/language/LTZ>
-    <http://publications.europa.eu/resource/authority/language/NOR>
-  );
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:license> sh:path dct:license;
   sh:name "License"@en;
   sh:description "A licence under which the Data service is made available."@en;
@@ -198,20 +153,6 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:modified> sh:path dct:modified;
-  sh:name "modification date"@en;
-  sh:maxCount 1;
-  sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:DateTimePickerEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#adms:identifier> sh:path adms:identifier;
-  sh:name "other identifier"@en;
-  sh:node gdi:IdentifierShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
   sh:name "Publisher"@en;

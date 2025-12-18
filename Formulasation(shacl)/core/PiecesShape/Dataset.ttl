@@ -64,7 +64,7 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
     <http://data.gdi.eu/core/p2/DatasetShape#quality-annotation>,
     <http://data.gdi.eu/core/p2/DatasetShape#release-date>, <http://data.gdi.eu/core/p2/DatasetShape#retention-period>,
     <http://data.gdi.eu/core/p2/DatasetShape#sample>, <http://data.gdi.eu/core/p2/DatasetShape#source>,
-    <http://data.gdi.eu/core/p2/DatasetShape#status>, <http://data.gdi.eu/core/p2/DatasetShape#temporal-coverage>,
+    <http://data.gdi.eu/core/p2/DatasetShape#temporal-coverage>,
     <http://data.gdi.eu/core/p2/DatasetShape#temporal-resolution>, <http://data.gdi.eu/core/p2/DatasetShape#theme>,
     <http://data.gdi.eu/core/p2/DatasetShape#title>, <http://data.gdi.eu/core/p2/DatasetShape#type>,
     <http://data.gdi.eu/core/p2/DatasetShape#version>, <http://data.gdi.eu/core/p2/DatasetShape#version-notes>,
@@ -446,22 +446,6 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.gdi.eu/core/p2/DatasetShape#status> sh:path adms:status;
-  sh:name "status"@en;
-  sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:in (
-    euds:COMPLETED
-    euds:DEPRECATED
-    euds:DEVELOP
-    euds:DISCONT
-    euds:OP_DATPRO
-    euds:WITHDRAWN
-  );
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
 <http://data.gdi.eu/core/p2/DatasetShape#temporal-coverage> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "A temporal period that the Dataset covers."@en;
@@ -499,6 +483,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
 <http://data.gdi.eu/core/p2/DatasetShape#type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the Dataset.This property must be filled with a value from a controlled vocabulary."@en;
+  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   sh:in ( type:SYNTHETIC_DATA );
