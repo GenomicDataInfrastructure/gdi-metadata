@@ -169,6 +169,20 @@ gdi:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
+<http://creativecommons.org/publicdomain/mark/1.0> rdfs:label "Public Domain Mark 1.0"@en .
+<http://creativecommons.org/publicdomain/zero/1.0> rdfs:label "CC0 1.0 Universal"@en .
+<http://opendatacommons.org/licenses/pddl/1-0> rdfs:label "ODC Public Domain Dedication and Licence (PDDL) 1.0"@en .
+<http://creativecommons.org/licenses/by/4.0> rdfs:label "CC BY 4.0"@en .
+<http://cdla.dev/permissive-2-0> rdfs:label "Community Data License Agreement – Permissive 2.0"@en .
+<http://opendatacommons.org/licenses/by/1-0> rdfs:label "Open Data Commons Attribution (ODC-By) 1.0"@en .
+<http://creativecommons.org/licenses/by-sa/4.0> rdfs:label "CC BY-SA 4.0"@en .
+<http://cdla.dev/sharing-1-0> rdfs:label "Community Data License Agreement – Sharing 1.0"@en .
+<http://opendatacommons.org/licenses/odbl/1-0> rdfs:label "Open Data Commons Open Database License (ODbL) 1.0"@en .
+<http://creativecommons.org/licenses/by-nc/4.0> rdfs:label "CC BY-NC 4.0"@en .
+<http://creativecommons.org/licenses/by-nd/4.0> rdfs:label "CC BY-ND 4.0"@en .
+<http://creativecommons.org/licenses/by-nc-sa/4.0> rdfs:label "CC BY-NC-SA 4.0"@en .
+<http://creativecommons.org/licenses/by-nc-nd/4.0> rdfs:label "CC BY-NC-ND 4.0"@en .
+
 <http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "linked schemas"@en;
   sh:nodeKind sh:IRI;
