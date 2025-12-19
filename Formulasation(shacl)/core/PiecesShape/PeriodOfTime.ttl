@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2025 Health-RI
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
+@prefix dash: <http://datashapes.org/dash#> .
+
+gdi:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Period of Time"@en;
+  rdfs:comment "Health-RI v2 Period of Time"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-09-09T15:41:10.000Z"^^xsd:dateTime .
+
+gdi:PeriodOfTimeShape a sh:NodeShape;
+  rdfs:label "Period of Time"@en;
+  sh:targetClass dct:PeriodOfTime;
+  sh:property <http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:startDate> .
+
+<http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.gdi.eu/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+  sh:name "start date"@en;
+  sh:description "The start of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .

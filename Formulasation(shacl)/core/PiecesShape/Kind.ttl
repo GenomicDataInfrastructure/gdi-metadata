@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2025 Health-RI
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+
+gdi:KindShapeKindShape a owl:Ontology;
+  rdfs:label "Kind"@en;
+  rdfs:comment "Health-RI v2 Kind."@en;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
+
+gdi:KindShape a sh:NodeShape;
+  rdfs:label "Kind"@en;
+  sh:targetClass vcard:Kind;
+  sh:property <http://data.gdi.eu/core/p2/KindShape#vcard:hasURL>, <http://data.gdi.eu/core/p2/KindShape#vcard:hasEmail>,
+    <http://data.gdi.eu/core/p2/KindShape#vcard:fn> .
+
+<http://data.gdi.eu/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
+  sh:name "contact page"@en;
+  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
+  sh:name "has email"@en;
+  sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/KindShape#vcard:fn> sh:path vcard:fn;
+  sh:name "formatted name"@en;
+  sh:description "The full name of the contact point."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .

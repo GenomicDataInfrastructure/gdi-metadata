@@ -1,61 +1,274 @@
-# SPDX-FileCopyrightText: 2024 Health-ri.
-#
+# SPDX-FileCopyrightText: 2025 Health-RI
+# 
 # SPDX-License-Identifier: Apache-2.0
 
-@prefix :         <http://fairdatapoint.org/> .
-@prefix dash:     <http://datashapes.org/dash#> .
-@prefix dcat:     <http://www.w3.org/ns/dcat#> .
-@prefix dct:      <http://purl.org/dc/terms/> .
-@prefix sh:       <http://www.w3.org/ns/shacl#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 
-:DistributionShape a sh:NodeShape ;
-  sh:targetClass dcat:Distribution ;
-  sh:property [
-    sh:path dcat:accessURL ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    dash:viewer dash:URIViewer ;
-    dash:editor dash:URIEditor ;
-  ],
-  [
-    sh:path dcat:mediaType ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-  ] ,
-  [
-    sh:path dct:title ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-    dash:viewer dash:LiteralViewer ;
-    dash:editor dash:TextFieldEditor ;
-  ] ,
-  [
-    sh:path dct:description ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-    dash:viewer dash:LiteralViewer ;
-    dash:editor dash:TextFieldEditor ;
-  ] ,
-  [
-    sh:path dcat:accessService ;
-    sh:class dcat:DataService ;
-  ] ,
-  [
-    sh:path dcat:downloadURL ;
-    sh:nodeKind sh:IRI ; 
-    dash:viewer dash:URIViewer ;
-    dash:editor dash:URIEditor ;
-  ] ,
-    [
-    sh:path dct:license ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    dash:viewer dash:LabelViewer ;
-    dash:editor dash:URIEditor ;
-  ] .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
+
+<https://data.sparna.fr/shapes-example#> a owl:Ontology;
+  rdfs:label "Distribution"@en;
+  rdfs:comment "Health-RI v2 Distribution."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-09-16T09:23:35.310Z"^^xsd:dateTime .
+
+gdi:DistributionShape a sh:NodeShape;
+  rdfs:label "Distribution"@en;
+  sh:targetClass dcat:Distribution;
+  sh:property <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL>, <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:byteSize>, <http://data.gdi.eu/core/p2/DistributionShape#spdx:checksum>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:compressFormat>, <http://data.gdi.eu/core/p2/DistributionShape#dct:description>,
+    <http://data.gdi.eu/core/p2/DistributionShape#foaf:page>, <http://data.gdi.eu/core/p2/DistributionShape#dcat:downloadURL>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:format>, <http://data.gdi.eu/core/p2/DistributionShape#dct:language>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:license>, <http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:mediaType>, <http://data.gdi.eu/core/p2/DistributionShape#dct:modified>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:packageFormat>, <http://data.gdi.eu/core/p2/DistributionShape#dct:issued>,
+    <http://data.gdi.eu/core/p2/DistributionShape#healthdcatap:retentionperiod>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:rights>, <http://data.gdi.eu/core/p2/DistributionShape#adms:status>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:temporalResolution>, <http://data.gdi.eu/core/p2/DistributionShape#dct:title> .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
+  sh:name "access service"@en;
+  sh:class dcat:DataService .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
+  sh:name "access url"@en;
+  sh:description "The resource at the access URL may contain information about how to get the Dataset."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>
+  sh:path dcatap:applicableLegislation;
+  sh:name "Applicable Legislation"@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:byteSize> sh:path dcat:byteSize;
+  sh:name "byte size"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:nonNegativeInteger;
+  sh:minExclusive 0;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#spdx:checksum> sh:path spdx:checksum;
+  sh:name "checksum"@en;
+  sh:description "The checksum is related to the downloadURL."@en;
+  sh:maxCount 1;
+  sh:node gdi:ChecksumShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:compressFormat> sh:path dcat:compressFormat;
+  sh:name "compression format"@en;
+  sh:description "It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:description> sh:path dct:description;
+  sh:name "description"@en;
+  sh:description "This property can be repeated for parallel language versions of the description."@en;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#foaf:page> sh:path foaf:page;
+  sh:name "documentation"@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:downloadURL> sh:path dcat:downloadURL;
+  sh:name "download URL"@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:format> sh:path dct:format;
+  sh:name "format"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:language> sh:path dct:language;
+  sh:name "language"@en;
+  sh:description "This property can be repeated if the metadata is provided in multiple languages."@en;
+  sh:nodeKind sh:IRI;
+  sh:in (
+    <http://publications.europa.eu/resource/authority/language/ENG>
+    <http://publications.europa.eu/resource/authority/language/NLD>
+    <http://publications.europa.eu/resource/authority/language/FRA>
+    <http://publications.europa.eu/resource/authority/language/DEU>
+    <http://publications.europa.eu/resource/authority/language/SPA>
+    <http://publications.europa.eu/resource/authority/language/POR>
+    <http://publications.europa.eu/resource/authority/language/ITA>
+    <http://publications.europa.eu/resource/authority/language/SWE>
+    <http://publications.europa.eu/resource/authority/language/FIN>
+    <http://publications.europa.eu/resource/authority/language/EST>
+    <http://publications.europa.eu/resource/authority/language/LAV>
+    <http://publications.europa.eu/resource/authority/language/LIT>
+    <http://publications.europa.eu/resource/authority/language/SLV>
+    <http://publications.europa.eu/resource/authority/language/HUN>
+    <http://publications.europa.eu/resource/authority/language/CES>
+    <http://publications.europa.eu/resource/authority/language/DAN>
+    <http://publications.europa.eu/resource/authority/language/BUL>
+    <http://publications.europa.eu/resource/authority/language/RON>
+    <http://publications.europa.eu/resource/authority/language/MLT>
+    <http://publications.europa.eu/resource/authority/language/ELL>
+    <http://publications.europa.eu/resource/authority/language/HRV>
+    <http://publications.europa.eu/resource/authority/language/LTZ>
+    <http://publications.europa.eu/resource/authority/language/NOR>
+  );
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:license> sh:path dct:license;
+  sh:name "license"@en;
+  sh:description "Select the licence used for this distribution."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:in (
+    <http://creativecommons.org/publicdomain/mark/1.0>
+    <http://creativecommons.org/publicdomain/zero/1.0>
+    <http://opendatacommons.org/licenses/pddl/1-0>
+    <http://creativecommons.org/licenses/by/4.0>
+    <http://cdla.dev/permissive-2-0>
+    <http://opendatacommons.org/licenses/by/1-0>
+    <http://creativecommons.org/licenses/by-sa/4.0>
+    <http://cdla.dev/sharing-1-0>
+    <http://opendatacommons.org/licenses/odbl/1-0>
+    <http://creativecommons.org/licenses/by-nc/4.0>
+    <http://creativecommons.org/licenses/by-nd/4.0>
+    <http://creativecommons.org/licenses/by-nc-sa/4.0>
+    <http://creativecommons.org/licenses/by-nc-nd/4.0>
+  );
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+<http://creativecommons.org/publicdomain/mark/1.0> rdfs:label "Public Domain Mark 1.0"@en .
+<http://creativecommons.org/publicdomain/zero/1.0> rdfs:label "CC0 1.0 Universal"@en .
+<http://opendatacommons.org/licenses/pddl/1-0> rdfs:label "ODC Public Domain Dedication and Licence (PDDL) 1.0"@en .
+<http://creativecommons.org/licenses/by/4.0> rdfs:label "CC BY 4.0"@en .
+<http://cdla.dev/permissive-2-0> rdfs:label "Community Data License Agreement – Permissive 2.0"@en .
+<http://opendatacommons.org/licenses/by/1-0> rdfs:label "Open Data Commons Attribution (ODC-By) 1.0"@en .
+<http://creativecommons.org/licenses/by-sa/4.0> rdfs:label "CC BY-SA 4.0"@en .
+<http://cdla.dev/sharing-1-0> rdfs:label "Community Data License Agreement – Sharing 1.0"@en .
+<http://opendatacommons.org/licenses/odbl/1-0> rdfs:label "Open Data Commons Open Database License (ODbL) 1.0"@en .
+<http://creativecommons.org/licenses/by-nc/4.0> rdfs:label "CC BY-NC 4.0"@en .
+<http://creativecommons.org/licenses/by-nd/4.0> rdfs:label "CC BY-ND 4.0"@en .
+<http://creativecommons.org/licenses/by-nc-sa/4.0> rdfs:label "CC BY-NC-SA 4.0"@en .
+<http://creativecommons.org/licenses/by-nc-nd/4.0> rdfs:label "CC BY-NC-ND 4.0"@en .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
+  sh:name "linked schemas"@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:mediaType> sh:path dcat:mediaType;
+  sh:name "media type"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:modified> sh:path dct:modified;
+  sh:name "modification date"@en;
+  sh:maxCount 1;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:packageFormat> sh:path dcat:packageFormat;
+  sh:name "packaging format"@en;
+  sh:description "It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:issued> sh:path dct:issued;
+  sh:name "release date"@en;
+  sh:description "The date the dataset distribution was issued."@en;
+  sh:maxCount 1;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#healthdcatap:retentionperiod>
+  sh:path healthdcatap:retentionperiod;
+  sh:name "retention period"@en;
+  sh:maxCount 1;
+  sh:node gdi:PeriodOfTimeShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:rights> sh:path dct:rights;
+  sh:name "rights"@en;
+  sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#adms:status> sh:path adms:status;
+  sh:name "status"@en;
+  sh:description "The status of the distribution in the context of maturity lifecycle."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:in _:63db696725d34edebb948ae5f263a6622;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+_:63db696725d34edebb948ae5f263a6622 rdf:first status:COMPLETED;
+  rdf:rest _:63db696725d34edebb948ae5f263a6623 .
+
+_:63db696725d34edebb948ae5f263a6623 rdf:first status:DEVELOP;
+  rdf:rest _:63db696725d34edebb948ae5f263a6624 .
+
+_:63db696725d34edebb948ae5f263a6624 rdf:first status:WITHDRAWN;
+  rdf:rest _:63db696725d34edebb948ae5f263a6625 .
+
+_:63db696725d34edebb948ae5f263a6625 rdf:first status:DEPRECATED;
+  rdf:rest rdf:nil .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:temporalResolution> sh:path
+    dcat:temporalResolution;
+  sh:name "temporal resolution"@en;
+  sh:maxCount 1;
+  sh:datatype xsd:duration;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "This property can be repeated for parallel language versions of the title."@en;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
