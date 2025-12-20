@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oss-review-toolkit/ort-ci-github-action@7f23c1f8d169dad430e41df223d3b8409c7a156e
+      - uses: oss-review-toolkit/ort-ci-github-action@3a5037ba7b646cc7665bc669410234d126da4723
         with:
           allow-dynamic-versions: "true"
           fail-on: "issues"
