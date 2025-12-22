@@ -13,19 +13,19 @@
 @prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 
-gdi:AgentShapeAgentShape a owl:Ontology;
+gdi:AgentCreatorShapeAgentCreatorShape a owl:Ontology;
   rdfs:label "Agent class"@en;
   rdfs:comment "Excel template for Agent class"@en;
   dct:description "This is a SHACL shape for the creator Agent for GDI v1.1"@en;
   owl:versionInfo "0.1";
   dct:modified "2025-12-22T00:00:00.000Z"^^xsd:dateTime .
 
-gdi:AgentShape a sh:NodeShape;
-  rdfs:label "Agent"@en;
+gdi:AgentCreatorShape a sh:NodeShape;
+  rdfs:label "Agent Creator"@en;
   sh:targetClass foaf:Agent;
-  sh:property <http://data.gdi.eu/core/p2/AgentShape#foaf:name>.
+  sh:property <http://data.gdi.eu/core/p2/AgentCreatorShape#foaf:name>.
 
-<http://data.gdi.eu/core/p2/AgentShape#foaf:name> sh:path foaf:name;
+<http://data.gdi.eu/core/p2/AgentCreatorShape#foaf:name> sh:path foaf:name;
   sh:name "name"@en;
   sh:description "A name of the agent."@en;
   sh:minCount 1;

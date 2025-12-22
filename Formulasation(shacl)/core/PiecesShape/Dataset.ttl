@@ -91,7 +91,7 @@ gdi:1MGCohort a dct:Standard;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
-  sh:node gdi:AgentShape;
+  sh:node gdi:AgentCreatorShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -114,7 +114,7 @@ gdi:1MGCohort a dct:Standard;
   sh:name "hdab"@en;
   sh:description "Health Data Access Body supporting access to data in the Member State."@en;
   sh:minCount 1;
-  sh:node gdi:AgentShape;
+  sh:node gdi:AgentHdabShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
