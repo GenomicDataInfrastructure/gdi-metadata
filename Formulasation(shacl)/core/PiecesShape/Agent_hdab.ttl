@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2025 Health-RI
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
+@prefix dash: <http://datashapes.org/dash#> .
+
+gdi:AgentShapeAgentShape a owl:Ontology;
+  rdfs:label "Agent class"@en;
+  rdfs:comment "Excel template for Agent class"@en;
+  dct:description "This is a SHACL shape for the HDAB Agent for GDI v1.1"@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-12-22T00:00:00.000Z"^^xsd:dateTime .
+
+gdi:AgentShape a sh:NodeShape;
+  rdfs:label "Agent"@en;
+  sh:targetClass foaf:Agent;
+  sh:property <http://data.gdi.eu/core/p2/AgentShape#contact-point>, <http://data.gdi.eu/core/p2/AgentShape#foaf:name>.
+
+<http://data.gdi.eu/core/p2/AgentShape#contact-point> sh:path dcat:contactPoint;
+  sh:name "contact point"@en;
+  sh:description "Contact information that can be used to contact the Agent."@en;
+  sh:minCount 1;
+  sh:node gdi:KindShape;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.gdi.eu/core/p2/AgentShape#foaf:name> sh:path foaf:name;
+  sh:name "name"@en;
+  sh:description "A name of the agent."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
