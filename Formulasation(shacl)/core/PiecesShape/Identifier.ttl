@@ -46,7 +46,6 @@ gdi:IdentifierShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/IdentifierShape#foaf:name> sh:path foaf:name;
   sh:name "name"@en;
   sh:description "A name of the agent."@en;
-  sh:minCount 1;
   sh:nodeKind sh:Literal;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
