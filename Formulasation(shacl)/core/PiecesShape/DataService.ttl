@@ -19,86 +19,16 @@
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "DataService"@en;
   rdfs:comment "Health-RI v2 DataService."@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
+  dct:description "SHACL definitions for GDI v1.1 metadata for DataService."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-09T13:38:40.950Z"^^xsd:dateTime .
+  dct:modified "2025-12-22T13:38:40.950Z"^^xsd:dateTime .
 
 gdi:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
   sh:targetClass dcat:DataService;
-  sh:property <http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcatap:applicableLegislation>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:conformsTo>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:contactPoint>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:creator>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:description>, 
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointDescription>, <http://data.gdi.eu/core/p2/DataServiceShape#adms:identifier>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointURL>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:format>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:landingPage>,
-    <http://data.gdi.eu/core/p2/DataServiceShape#dct:license>, <http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher>, 
-    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:servesDataset>, <http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme>, 
+  sh:property <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointURL>,
+    <http://data.gdi.eu/core/p2/DataServiceShape#dcat:servesDataset>, 
     <http://data.gdi.eu/core/p2/DataServiceShape#dct:title> .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
-  sh:name "Access Rights"@en;
-  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. This property must be filled with a value from a controlled vocabulary."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:defaultValue <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  sh:in _:dserviceAccessRightsList;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
-_:dserviceAccessRightsList rdf:first eu:PUBLIC;
-  rdf:rest _:dserviceAccessRightsListRest1 .
-
-_:dserviceAccessRightsListRest1 rdf:first eu:RESTRICTED;
-  rdf:rest _:dserviceAccessRightsListRest2 .
-
-_:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
-  rdf:rest rdf:nil .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
-    dcatap:applicableLegislation;
-  sh:name "Applicable Legislation"@en;
-  sh:description "The legislation that mandates the creation or management of the Data Service."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:conformsTo> sh:path dct:conformsTo;
-  sh:name "application profile"@en;
-  sh:description "The standards referred here SHOULD describe the Data Service and not the data it serves. The latter is provided by the dataset with which this Data Service is connected. For instance the data service adheres to the OGC WFS API standard, while the associated dataset adheres to the INSPIRE Address data model."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcat:contactPoint> sh:path dcat:contactPoint;
-  sh:name "Contact Point"@en;
-  sh:description "Contact information that can be used for sending comments about the Data Service."@en;
-  sh:node gdi:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:creator> sh:path dct:creator;
-  sh:name "creator"@en;
-  sh:node gdi:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:description> sh:path dct:description;
-  sh:name "Description"@en;
-  sh:description "A free-text account of the Data Service."@en;
-  sh:nodeKind sh:Literal;
-  sh:uniqueLang true;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointDescription> sh:path
-    dcat:endpointDescription;
-  sh:name "end point description"@en;
-  sh:description "The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "end point URL"@en;
@@ -108,63 +38,12 @@ _:dserviceAccessRightsListRest2 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:format> sh:path dct:format;
-  sh:name "format"@en;
-  sh:description "The structure that can be returned by querying the endpointURL."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcat:keyword> sh:path dcat:keyword;
-  sh:name "keyword"@en;
-  sh:description "A keyword or tag describing the Data Service."@en;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcat:landingPage> sh:path dcat:landingPage;
-  sh:name "landing Page"@en;
-  sh:description "It is intended to point to a landing page at the original data service provider, not to a page on a site of a third party, such as an aggregator."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:license> sh:path dct:license;
-  sh:name "License"@en;
-  sh:description "A licence under which the Data service is made available."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
-  sh:name "Publisher"@en;
-  sh:description "An entity (organisation) responsible for making the Data Service available."@en;
-  sh:maxCount 1;
-  sh:node gdi:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
-
 <http://data.gdi.eu/core/p2/DataServiceShape#dcat:servesDataset> sh:path dcat:servesDataset;
   sh:name "serves dataset"@en;
   sh:description "This property refers to a collection of data that this data service can distribute."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#dcat:theme> sh:path dcat:theme;
-  sh:name "theme"@en;
-  sh:description "A Data Service may be associated with multiple themes."@en;
-    sh:defaultValue <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.gdi.eu/core/p2/DataServiceShape#adms:identifier> sh:path adms:identifier;
-  sh:name "other identifier"@en;
-  sh:node gdi:IdentifierShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
 
 <http://data.gdi.eu/core/p2/DataServiceShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
