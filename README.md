@@ -21,5 +21,5 @@ Use the schema tool to push the SHACL updates to your FDP instance.
 - `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`: Standard project documentation and contribution guidelines.
 
 Current SHACLs are based on:
-- GDI harmonised metadata spreadsheet: https://docs.google.com/spreadsheets/d/1HpznG8yTcs7if0xqNSpZZIGpbEe7_3ZG6_nF1YeJmSA/edit?gid=225294581#gid=225294581
+- GDI harmonised metadata spreadsheet: https://docs.google.com/spreadsheets/d/1XsXdBD6jD8f6nUaUSB4pHGtqynJUkoZ9PQXpxWNZ4qw/edit?gid=225294581#gid=225294581
 - HealthDCAT-AP 5.0: https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-5/
