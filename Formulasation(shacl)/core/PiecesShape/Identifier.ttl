@@ -15,15 +15,15 @@
 
 gdi:aux-IdentifierShape a owl:Ontology;
   rdfs:label "Identifier"@en;
-  rdfs:comment "Health-RI v2 Identifier"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
+  rdfs:comment "GDI v1.1 Identifier"@en;
+  dct:description "SHACL definitions for GDI v1.1 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-29T14:03:03.240Z"^^xsd:dateTime .
+  dct:modified "2025-12-22T14:03:03.240Z"^^xsd:dateTime .
 
 gdi:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;
   sh:targetClass adms:Identifier;
-  sh:property <http://data.gdi.eu/core/p2/IdentifierShape#skos:notation>, <http://data.gdi.eu/core/p2/IdentifierShape#adms:schemaAgency> .
+  sh:property <http://data.gdi.eu/core/p2/IdentifierShape#skos:notation>, <http://data.gdi.eu/core/p2/IdentifierShape#adms:schemaAgency>, <http://data.gdi.eu/core/p2/IdentifierShape#foaf:name> .
 
 <http://data.gdi.eu/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
   sh:name "notation"@en;
@@ -38,8 +38,15 @@ gdi:IdentifierShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
   sh:name "schema agency"@en;
   sh:description "The name of the agency that issued the identifier."@en;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
+
+<http://data.gdi.eu/core/p2/IdentifierShape#foaf:name> sh:path foaf:name;
+  sh:name "name"@en;
+  sh:description "A name of the agent."@en;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .

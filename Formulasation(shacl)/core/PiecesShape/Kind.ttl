@@ -15,10 +15,10 @@
 
 gdi:KindShapeKindShape a owl:Ontology;
   rdfs:label "Kind"@en;
-  rdfs:comment "Health-RI v2 Kind."@en;
-  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
+  rdfs:comment "HealthDCAT Kind."@en;
+  dct:description "SHACL mandatory definitions for the GDI v1.1 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
+  dct:modified "2025-12-22T14:35:17.460Z"^^xsd:dateTime .
 
 gdi:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -29,7 +29,6 @@ gdi:KindShape a sh:NodeShape;
 <http://data.gdi.eu/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
   sh:name "contact page"@en;
   sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
-  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
