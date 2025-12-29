@@ -29,7 +29,14 @@
 gdi:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
   sh:targetClass dcat:Distribution;
-  sh:property <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL>, <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>.
+  sh:property <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL>, 
+    <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>, 
+    <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService>,
+    <http://data.gdi.eu/core/p2/DistributionShape#dct:title> .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
+  sh:name "access service"@en;
+  sh:class dcat:DataService .
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL> sh:path dcat:accessURL;
   sh:name "access url"@en;
@@ -44,5 +51,16 @@ gdi:DistributionShape a sh:NodeShape;
   sh:name "Applicable Legislation"@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/DistributionShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:minCount 1;
+  sh:description "This property can be repeated for parallel language versions of the title."@en;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+

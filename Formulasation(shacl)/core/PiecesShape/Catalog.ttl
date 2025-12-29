@@ -36,6 +36,7 @@ gdi:CatalogShape a sh:NodeShape;
   sh:description "The legislation that mandates the creation or management of the Catalog."@en;
   sh:minCount 1;  
   sh:nodeKind sh:IRI;
+  sh:defaultValue <http://data.europa.eu/eli/reg/2025/327/oj>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 

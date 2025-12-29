@@ -31,12 +31,12 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
   owl:versionInfo "0.1";
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.gdi.eu/core/p2/DatasetShape#access-rights>, <http://data.gdi.eu/core/p2/DatasetShape#applicable-legislation>, <http://data.gdi.eu/core/p2/DatasetShape#code-values>, 
+  sh:property <http://data.gdi.eu/core/p2/DatasetShape#access-rights>, <http://data.gdi.eu/core/p2/DatasetShape#applicable-legislation>, 
     <http://data.gdi.eu/core/p2/DatasetShape#conforms-to>, <http://data.gdi.eu/core/p2/DatasetShape#creator>,
     <http://data.gdi.eu/core/p2/DatasetShape#description>, <http://data.gdi.eu/core/p2/DatasetShape#distribution>,
     <http://data.gdi.eu/core/p2/DatasetShape#hdab>, <http://data.gdi.eu/core/p2/DatasetShape#identifier>, <http://data.gdi.eu/core/p2/DatasetShape#is-referenced-by>,
     <http://data.gdi.eu/core/p2/DatasetShape#legal-basis>, 
-    <http://data.gdi.eu/core/p2/DatasetShape#number-of-records>, <http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-infividuals>,
+    <http://data.gdi.eu/core/p2/DatasetShape#number-of-records>, <http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-individuals>,
     <http://data.gdi.eu/core/p2/DatasetShape#other-identifier>, <http://data.gdi.eu/core/p2/DatasetShape#theme>,
     <http://data.gdi.eu/core/p2/DatasetShape#title>, <http://data.gdi.eu/core/p2/DatasetShape#type> .
 
@@ -107,13 +107,11 @@ gdi:1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#distribution> sh:path dcat:distribution;
   sh:name "distribution"@en;
   sh:description "An available Distribution for the Dataset."@en;
-  sh:minCount 1;
   sh:nodeKind sh:IRI .
 
 <http://data.gdi.eu/core/p2/DatasetShape#hdab> sh:path healthdcatap:hdab;
   sh:name "hdab"@en;
   sh:description "Health Data Access Body supporting access to data in the Member State."@en;
-  sh:minCount 1;
   sh:node gdi:AgentHdabShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -176,9 +174,9 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-infividuals> sh:path
+<http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-individuals> sh:path
     healthdcatap:numberOfUniqueIndividuals;
-  sh:name "number of unique infividuals"@en;
+  sh:name "number of unique individuals"@en;
   sh:description "Number of records for unique individuals."@en;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:nonNegativeInteger;
