@@ -5,35 +5,31 @@
 ---
 schemas:
   #The FDP shape files are constructed using the files in the PiecesShape folder.
+  Catalog:
+    - "Catalog.ttl"
   Dataset:
     - "Dataset.ttl"
     - "AgentCreator.ttl"
     - "AgentHdab.ttl"
     - "Kind.ttl"
     - "Identifier.ttl"
+  Resource:
+    - "Resource.ttl"
   Distribution:
     - "Distribution.ttl"
   Data Service:
     - "DataService.ttl"
 # Some schemas are extending the Resource schema.
-#parentChild:
-#  Resource:
-#    - "Dataset"
-#    - "Data Service"
-#the resources for the FDP, note we are using Parent relation instead of Childeren (as the FDP does)
-# resources:
-#  Sample Distribution:
-#    parentResource: "Dataset"
-#    parentRelationIri: "http://www.w3.org/ns/adms#sample"
-#    schema: "Distribution"
-#  Dataset Series:
-#    parentResource: "Dataset"
-#    parentRelationIri: "http://www.w3.org/ns/dcat#inSeries"
-#    schema: "Dataset Series"
-#  Analytics Distribution:
-#    parentResource: "Dataset"
-#    parentRelationIri: "http://healthdataportal.eu/ns/health#analytics"
-#    schema: "Distribution"
+parentChild:
+ Resource:
+   - "Dataset"
+   - "Data Service"
+# the resources for the FDP, note we are using Parent relation instead of Childeren (as the FDP does)
+resources:
+ Sample Distribution:
+   parentResource: "Dataset"
+   parentRelationIri: "http://www.w3.org/ns/adms#sample"
+   schema: "Distribution"
 schemasToPublish:
   - "Dataset"
   - "Distribution"
