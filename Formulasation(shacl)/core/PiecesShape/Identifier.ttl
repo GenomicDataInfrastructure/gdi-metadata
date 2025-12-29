@@ -15,7 +15,7 @@
 
 gdi:aux-IdentifierShape a owl:Ontology;
   rdfs:label "Identifier"@en;
-  rdfs:comment "Health-RI v2 Identifier"@en;
+  rdfs:comment "GDI v1.1 Identifier"@en;
   dct:description "SHACL definitions for GDI v1.1 model for Identifier."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-12-22T14:03:03.240Z"^^xsd:dateTime .

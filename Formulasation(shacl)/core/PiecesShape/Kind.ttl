@@ -15,8 +15,8 @@
 
 gdi:KindShapeKindShape a owl:Ontology;
   rdfs:label "Kind"@en;
-  rdfs:comment "Health-RI v2 Kind."@en;
-  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
+  rdfs:comment "HealthDCAT Kind."@en;
+  dct:description "SHACL mandatory definitions for the GDI v1.1 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-12-22T14:35:17.460Z"^^xsd:dateTime .
 

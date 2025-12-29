@@ -13,8 +13,8 @@
 
 gdi:ResourceShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Resource"@en;
-  rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+  rdfs:comment "GDI v1.1 Resource placeholder."@en;
+  dct:description "SHACL stub for the GDI v1.1 model for Resource."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-07-14T08:12:44.070Z"^^xsd:dateTime;
   sh:targetClass dcat:Resource .

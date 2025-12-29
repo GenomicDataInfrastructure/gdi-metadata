@@ -21,7 +21,7 @@
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Distribution"@en;
-  rdfs:comment "Health-RI v2 Distribution."@en;
+  rdfs:comment "GDI v1.1 Distribution."@en;
   dct:description "SHACL definitions for the GDI v1.1 model for Distribution."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-12-22T09:23:35.310Z"^^xsd:dateTime .

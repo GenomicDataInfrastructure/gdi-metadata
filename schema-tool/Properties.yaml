@@ -40,7 +40,7 @@ schemasToPublish:
 schemaVersion: "2.0.0"
 #Location of the shapes files used for uploading to FDP.
 inputDir: "https://raw.githubusercontent.com/GenomicDataInfrastructure/gdi-metadata/refs/heads/main/Formulasation(shacl)/core/PiecesShape/"
-#for use with the template option, uses Excel template to generate shapes files (Health-ri use only!)
+#for use with the template option, uses Excel template to generate shapes files for uploading to FDP.
 templateDir: ""
 outputRoot: ""
 piecesDir: "PiecesShape"
