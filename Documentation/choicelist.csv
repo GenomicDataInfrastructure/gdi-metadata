@@ -1,4 +1,4 @@
-﻿dct:conformsTo;;dct:accessRights;;HealthCategory;;dct:type;;dpv:hasLegalBasis;;dcat:applicableLegislation
+dct:conformsTo;;dct:accessRights;;HealthCategory;;dct:type;;dpv:hasLegalBasis;;dcat:applicableLegislation
 ;;;;;;;;;;
 Externally governed;;PUBLIC;;"(f) human genetic, epigenomic and genomic data;";;SYNTHETIC_DATA;;dpv:Consent;;EHDS
 1+MG compliant;;RESTRICTED;;"(g) other human molecular data such as proteomic, transcriptomic, metabolomic, lipidomic and other omic data;";;;;dpv:Contract;;GDPR
