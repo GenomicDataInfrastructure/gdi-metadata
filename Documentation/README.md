@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Health-RI.
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 Note on mandatory fields with lists (but not strings): also HL7 NULL flavors will be allowed.
 
 Version history; Items added per version
