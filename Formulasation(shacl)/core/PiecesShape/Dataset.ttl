@@ -132,7 +132,7 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:minCount 1;
   sh:in ( gdi:HealthCategoryHumanGenetic gdi:HealthCategoryHumanEpigenomic gdi:HealthCategoryHumanGenomic );
   dash:viewer dash:URIViewer;
-  dash:editor dash:MultiSelectEditor .
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
