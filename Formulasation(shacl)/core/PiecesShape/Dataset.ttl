@@ -35,7 +35,7 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
     <http://data.gdi.eu/core/p2/DatasetShape#conforms-to>, <http://data.gdi.eu/core/p2/DatasetShape#creator>,
     <http://data.gdi.eu/core/p2/DatasetShape#description>, <http://data.gdi.eu/core/p2/DatasetShape#distribution>,
     <http://data.gdi.eu/core/p2/DatasetShape#hdab>, <http://data.gdi.eu/core/p2/DatasetShape#identifier>, <http://data.gdi.eu/core/p2/DatasetShape#is-referenced-by>,
-    <http://data.gdi.eu/core/p2/DatasetShape#legal-basis>, 
+    <http://data.gdi.eu/core/p2/DatasetShape#legal-basis>, http://data.gdi.eu/core/p2/DatasetShape#health-category,
     <http://data.gdi.eu/core/p2/DatasetShape#number-of-records>, <http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-individuals>,
     <http://data.gdi.eu/core/p2/DatasetShape#other-identifier>, <http://data.gdi.eu/core/p2/DatasetShape#theme>,
     <http://data.gdi.eu/core/p2/DatasetShape#title>, <http://data.gdi.eu/core/p2/DatasetShape#type> .
@@ -125,8 +125,8 @@ gdi:HealthCategoryHumanEpigenomic a skos:Concept;
 gdi:HealthCategoryHumanGenomic a skos:Concept;
   skos:prefLabel "Human genomic data"@en .
 
-<http://data.gdi.eu/core/p2/DatasetShape#health-catagory> sh:path healthdcatap:healthCatagory;
-  sh:name "health catagory"@en;
+<http://data.gdi.eu/core/p2/DatasetShape#health-category> sh:path healthdcatap:healthCategory;
+  sh:name "health category"@en;
   sh:description "A category of the Dataset or tag describing the Dataset."@en;
   sh:nodeKind sh:IRI;
   sh:minCount 1;
