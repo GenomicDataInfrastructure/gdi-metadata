@@ -81,7 +81,6 @@ gdi:1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#conforms-to> sh:path dct:conformsTo;
   sh:name "conforms to"@en;
   sh:description "An implementing rule or other specification"@en;
-  sh:class dct:Standard;
   sh:nodeKind sh:IRI;
   sh:in ( gdi:ExternallyGoverned gdi:1MGCompliant gdi:1MGCohort );
   dash:viewer dash:URIViewer;
