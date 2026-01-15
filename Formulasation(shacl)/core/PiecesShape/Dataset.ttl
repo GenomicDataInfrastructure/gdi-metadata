@@ -140,8 +140,8 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:minCount 1;
   sh:datatype xsd:string;
   sh:nodeKind sh:Literal;
-  sh:pattern "^(GOE|GDI)-[A-Z]{2}-[0-9]+$";
-  sh:message "Use GOE-CC-NNN… or GDI-CC-NNN… (CC = two-letter country code, NNN… = digits)."@en;
+  sh:pattern "^(GOE|GDI)-[A-Z]{2}-[A-Z]+-[0-9]+$";
+  sh:message "Use GOE-CC-ORG-NNN… or GDI-CC-ORG-NNN… (CC = two-letter country code, ORG = institute abbreviation, NNN… = digits)."@en;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
