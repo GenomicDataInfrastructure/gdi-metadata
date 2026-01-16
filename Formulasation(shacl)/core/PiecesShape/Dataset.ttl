@@ -81,7 +81,6 @@ gdi:1MGCohort a dct:Standard;
 <http://data.gdi.eu/core/p2/DatasetShape#conforms-to> sh:path dct:conformsTo;
   sh:name "conforms to"@en;
   sh:description "An implementing rule or other specification"@en;
-  sh:class dct:Standard;
   sh:nodeKind sh:IRI;
   sh:in ( gdi:ExternallyGoverned gdi:1MGCompliant gdi:1MGCohort );
   dash:viewer dash:URIViewer;
@@ -140,8 +139,8 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:minCount 1;
   sh:datatype xsd:string;
   sh:nodeKind sh:Literal;
-  sh:pattern "^(GOE|GDI)-[A-Z]{2}-[0-9]+$";
-  sh:message "Use GOE-CC-NNN… or GDI-CC-NNN… (CC = two-letter country code, NNN… = digits)."@en;
+  sh:pattern "^(GOE|GDI)-[A-Z]{2}-[A-Z]+-[0-9]+$";
+  sh:message "Use GOE-CC-ORG-NNN… or GDI-CC-ORG-NNN… (CC = two-letter country code, ORG = institute abbreviation, NNN… = digits)."@en;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 

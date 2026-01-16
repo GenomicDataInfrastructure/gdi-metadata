@@ -33,4 +33,3 @@ gdi:AgentCreatorShape a sh:NodeShape;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
-
