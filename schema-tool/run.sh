@@ -1,7 +1,8 @@
 #!/bin/sh
 
+# SPDX-FileCopyrightText: 2025 Health-RI
 # SPDX-FileCopyrightText: 2026 Molecular Medicine Center
-# 
+#
 # SPDX-License-Identifier: Apache-2.0
 
 # Usage: ./run.sh [truststore.jks]
