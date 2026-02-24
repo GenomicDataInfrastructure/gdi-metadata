@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Health-RI.
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # GDI Metadata Model Overview
 
 ## Class Relationships
