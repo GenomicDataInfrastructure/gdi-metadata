@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# SPDX-FileCopyrightText: 2026 Molecular Medicine Center
+# 
+# SPDX-License-Identifier: Apache-2.0
+
 # Use first argument as CRT file, default to ./my-ca.crt
 CRT_FILE="${1:-./my-ca.crt}"
 

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Molecular Medicine Center
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Schema Tool
 
 Scripts for running the FDP Schema Update Tool with optional custom CA trust.

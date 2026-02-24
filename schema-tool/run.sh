@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# SPDX-FileCopyrightText: 2026 Molecular Medicine Center
+# 
+# SPDX-License-Identifier: Apache-2.0
+
 # Usage: ./run.sh [truststore.jks]
 # Runs the schema tool with optional custom truststore for CA trust.
 
