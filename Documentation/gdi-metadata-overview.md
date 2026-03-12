@@ -13,12 +13,13 @@ graph TD
     Resource["<b>Resource</b><br/><i>dcat:Resource</i>"]
 
     Catalog["<b>Catalog</b><br/><i>dcat:Catalog</i><br/>title, description,<br/>applicableLegislation"]
-    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>accessRights, applicableLegislation,<br/>theme, healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
+    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>creator, publisher,<br/>accessRights, applicableLegislation,<br/>theme, keyword, healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords, numberOfColumns,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
     DataService["<b>DataService</b><br/><i>dcat:DataService</i><br/>title, endpointURL"]
 
     Distribution["<b>Distribution</b><br/><i>dcat:Distribution</i><br/>title, accessURL,<br/>applicableLegislation"]
 
     AgentCreator["<b>Agent (Creator)</b><br/><i>foaf:Agent</i><br/>name"]
+    AgentPublisher["<b>Agent (Publisher)</b><br/><i>foaf:Agent</i><br/>name"]
     AgentHDAB["<b>Agent (HDAB)</b><br/><i>foaf:Agent</i><br/>name"]
     Kind["<b>Kind (Contact Point)</b><br/><i>vcard:Kind</i><br/>fn, hasEmail, hasURL"]
     Identifier["<b>Identifier</b><br/><i>adms:Identifier</i><br/>notation, schemaAgency, name"]
@@ -30,13 +31,15 @@ graph TD
     Catalog -->|"dcat:dataset<br/>0..*"| Dataset
     Dataset -->|"dcat:distribution<br/>1..*"| Distribution
     Dataset -->|"dct:creator<br/>1..*"| AgentCreator
+    Dataset -->|"dct:publisher<br/>1..1"| AgentPublisher
     Dataset -->|"healthdcatap:hdab<br/>0..1"| AgentHDAB
     Dataset -->|"adms:identifier<br/>0..*"| Identifier
 
     Distribution -->|"dcat:accessService<br/>0..*"| DataService
     DataService -->|"dcat:servesDataset<br/>0..*"| Dataset
 
-    AgentHDAB -->|"dcat:contactPoint<br/>0..1"| Kind
+    AgentPublisher -->|"dcat:contactPoint<br/>1..*"| Kind
+    AgentHDAB -->|"dcat:contactPoint<br/>1..*"| Kind
 
     style Resource fill:#e0e0e0,stroke:#666,color:#000
     style Catalog fill:#bbdefb,stroke:#1565c0,color:#000
@@ -44,6 +47,7 @@ graph TD
     style Distribution fill:#fff9c4,stroke:#f9a825,color:#000
     style DataService fill:#ffe0b2,stroke:#e65100,color:#000
     style AgentCreator fill:#e1bee7,stroke:#7b1fa2,color:#000
+    style AgentPublisher fill:#e1bee7,stroke:#7b1fa2,color:#000
     style AgentHDAB fill:#e1bee7,stroke:#7b1fa2,color:#000
     style Kind fill:#f8bbd0,stroke:#c2185b,color:#000
     style Identifier fill:#d7ccc8,stroke:#5d4037,color:#000
@@ -55,8 +59,8 @@ graph TD
 
 | Prefix | Full URI | Description |
 |---|---|---|
-| **dcat** | `http://www.w3.org/ns/dcat#` | **Data Catalog Vocabulary** — W3C standard for describing datasets, distributions, data services, and catalogues. The backbone of the model. |
-| **dct** | `http://purl.org/dc/terms/` | **Dublin Core Terms** — widely-used vocabulary for generic metadata properties like `title`, `description`, `identifier`, `creator`, `type`, `accessRights`, `conformsTo`. |
+| **dcat** | `http://www.w3.org/ns/dcat#` | **Data Catalog Vocabulary** — W3C standard for describing datasets, distributions, data services, and catalogues. The backbone of the model (including `keyword`). |
+| **dct** | `http://purl.org/dc/terms/` | **Dublin Core Terms** — widely-used vocabulary for generic metadata properties like `title`, `description`, `identifier`, `creator`, `publisher`, `type`, `accessRights`, `conformsTo`. |
 | **dcatap** | `http://data.europa.eu/r5r/` | **DCAT Application Profile for data portals in Europe** — EU-specific extensions to DCAT, e.g. `applicableLegislation`. |
 
 ### Health-Specific
@@ -106,4 +110,4 @@ graph TD
 
 | Prefix | Full URI | Description |
 |---|---|---|
-| **gdi** | `http://data.gdi.eu/core/p2/` | **GDI's own namespace** — for shapes (`DatasetShape`, `CatalogShape`, etc.) and project-specific concepts like `gdi:1MGCompliant`, `gdi:HealthCategoryHumanGenomic`. |
+| **gdi** | `http://data.gdi.eu/core/p2/` | **GDI's own namespace** — for shapes (`DatasetShape`, `CatalogShape`, etc.) and project-specific concepts/properties like `gdi:1MGCompliant`, `gdi:HealthCategoryHumanGenomic`, `gdi:numberOfColumns`. |
