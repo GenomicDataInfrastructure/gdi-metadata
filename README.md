@@ -22,4 +22,4 @@ Use the schema tool to push the SHACL updates to your FDP instance.
 
 Current SHACLs are based on:
 - GDI metadata submission csv: `Documentation/Metadata_submission.csv`
-- HealthDCAT-AP 5.0: https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-5/
+- HealthDCAT-AP Release 6: https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6/
