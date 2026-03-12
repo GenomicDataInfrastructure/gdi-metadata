@@ -13,7 +13,7 @@ graph TD
     Resource["<b>Resource</b><br/><i>dcat:Resource</i>"]
 
     Catalog["<b>Catalog</b><br/><i>dcat:Catalog</i><br/>title, description,<br/>applicableLegislation"]
-    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>creator, publisher,<br/>accessRights, applicableLegislation,<br/>theme, keyword, healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords, numberOfColumns,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
+    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>creator, publisher,<br/>accessRights, applicableLegislation,<br/>theme, keyword, healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
     DataService["<b>DataService</b><br/><i>dcat:DataService</i><br/>title, endpointURL"]
 
     Distribution["<b>Distribution</b><br/><i>dcat:Distribution</i><br/>title, accessURL,<br/>applicableLegislation"]
@@ -110,4 +110,4 @@ graph TD
 
 | Prefix | Full URI | Description |
 |---|---|---|
-| **gdi** | `http://data.gdi.eu/core/p2/` | **GDI's own namespace** — for shapes (`DatasetShape`, `CatalogShape`, etc.) and project-specific concepts/properties like `gdi:1MGCompliant`, `gdi:HealthCategoryHumanGenomic`, `gdi:numberOfColumns`. |
+| **gdi** | `http://data.gdi.eu/core/p2/` | **GDI's own namespace** — for shapes (`DatasetShape`, `CatalogShape`, etc.) and project-specific concepts/properties like `gdi:1MGCompliant` and `gdi:HealthCategoryHumanGenomic`. |
