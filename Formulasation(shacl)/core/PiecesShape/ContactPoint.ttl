@@ -1,0 +1,71 @@
+# SPDX-FileCopyrightText: 2025 Health-RI
+#
+# SPDX-License-Identifier: Apache-2.0
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
+@prefix gdi: <http://data.gdi.eu/core/p2/> .
+@prefix dash: <http://datashapes.org/dash#> .
+
+gdi:ContactPointShapeContactPointShape a owl:Ontology;
+  rdfs:label "Contact Point"@en;
+  rdfs:comment "Core Vocabulary Contact Point."@en;
+  dct:description "SHACL mandatory definitions for the GDI v1.1 model for cv:ContactPoint."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2026-03-18T00:00:00.000Z"^^xsd:dateTime .
+
+gdi:ContactPointShape a sh:NodeShape;
+  rdfs:label "Contact Point"@en;
+  sh:targetClass cv:ContactPoint;
+  sh:or (
+    [ sh:property [
+          sh:path cv:contactPage;
+          sh:minCount 1
+        ] ]
+    [ sh:property [
+          sh:path cv:email;
+          sh:minCount 1
+        ] ]
+  );
+  sh:message "Provide at least one of contact page or email."@en;
+  sh:property <http://data.gdi.eu/core/p2/ContactPointShape#cv:availabilityRestriction>,
+    <http://data.gdi.eu/core/p2/ContactPointShape#cv:contactPage>,
+    <http://data.gdi.eu/core/p2/ContactPointShape#cv:email>,
+    <http://data.gdi.eu/core/p2/ContactPointShape#cv:openingHours>,
+    <http://data.gdi.eu/core/p2/ContactPointShape#cv:telephone> .
+
+<http://data.gdi.eu/core/p2/ContactPointShape#cv:availabilityRestriction> sh:path cv:specialOpeningHoursSpecification;
+  sh:name "availability restriction"@en;
+  sh:description "The time during which the Contact Point is not available."@en;
+  sh:nodeKind sh:BlankNodeOrIRI .
+
+<http://data.gdi.eu/core/p2/ContactPointShape#cv:contactPage> sh:path cv:contactPage;
+  sh:name "contact page"@en;
+  sh:description "A web page that could be used to reach out the Contact Point."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.gdi.eu/core/p2/ContactPointShape#cv:email> sh:path cv:email;
+  sh:name "email"@en;
+  sh:description "An electronic address through which the Contact Point can be contacted."@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.gdi.eu/core/p2/ContactPointShape#cv:openingHours> sh:path cv:openingHours;
+  sh:name "opening hours"@en;
+  sh:description "The time at which the Contact Point is normally available."@en;
+  sh:nodeKind sh:BlankNodeOrIRI .
+
+<http://data.gdi.eu/core/p2/ContactPointShape#cv:telephone> sh:path cv:telephone;
+  sh:name "telephone"@en;
+  sh:description "A telephone number through which the Contact Point can be contacted."@en;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

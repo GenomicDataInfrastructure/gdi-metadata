@@ -30,8 +30,8 @@ gdi:AgentHdabShape a sh:NodeShape;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used to contact the Agent."@en;
   sh:minCount 1;
-  sh:node gdi:KindShape;
-  dash:viewer dash:URIViewer;
+  sh:node gdi:ContactPointShape;
+  dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
 <http://data.gdi.eu/core/p2/AgentHdabShape#foaf:name> sh:path foaf:name;

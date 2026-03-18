@@ -32,7 +32,8 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
   dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
   sh:property <http://data.gdi.eu/core/p2/DatasetShape#access-rights>, <http://data.gdi.eu/core/p2/DatasetShape#applicable-legislation>, 
-    <http://data.gdi.eu/core/p2/DatasetShape#conforms-to>, <http://data.gdi.eu/core/p2/DatasetShape#creator>,
+    <http://data.gdi.eu/core/p2/DatasetShape#conforms-to>, <http://data.gdi.eu/core/p2/DatasetShape#contact-point>,
+    <http://data.gdi.eu/core/p2/DatasetShape#creator>,
     <http://data.gdi.eu/core/p2/DatasetShape#description>, <http://data.gdi.eu/core/p2/DatasetShape#distribution>,
     <http://data.gdi.eu/core/p2/DatasetShape#hdab>, <http://data.gdi.eu/core/p2/DatasetShape#identifier>, <http://data.gdi.eu/core/p2/DatasetShape#is-referenced-by>,
     <http://data.gdi.eu/core/p2/DatasetShape#keyword>, <http://data.gdi.eu/core/p2/DatasetShape#legal-basis>,
@@ -88,6 +89,13 @@ gdi:1MGCohort a dct:Standard;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
+<http://data.gdi.eu/core/p2/DatasetShape#contact-point> sh:path dcat:contactPoint;
+  sh:name "contact point"@en;
+  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
+  sh:node gdi:KindShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
 <http://data.gdi.eu/core/p2/DatasetShape#creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
@@ -101,7 +109,7 @@ gdi:1MGCohort a dct:Standard;
   sh:description "An entity (organisation) responsible for making the dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node gdi:AgentHdabShape;
+  sh:node gdi:AgentPublisherShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
