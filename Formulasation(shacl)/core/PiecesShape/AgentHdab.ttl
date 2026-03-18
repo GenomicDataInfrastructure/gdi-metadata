@@ -9,7 +9,7 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gdi: <http://data.gdi.eu/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
@@ -26,7 +26,7 @@ gdi:AgentHdabShape a sh:NodeShape;
   sh:targetClass foaf:Agent;
   sh:property <http://data.gdi.eu/core/p2/AgentHdabShape#contact-point>, <http://data.gdi.eu/core/p2/AgentHdabShape#foaf:name>.
 
-<http://data.gdi.eu/core/p2/AgentHdabShape#contact-point> sh:path dcat:contactPoint;
+<http://data.gdi.eu/core/p2/AgentHdabShape#contact-point> sh:path cv:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used to contact the Agent."@en;
   sh:minCount 1;
