@@ -55,6 +55,7 @@ gdi:ContactPointShape a sh:NodeShape;
   sh:name "email"@en;
   sh:description "An electronic address through which the Contact Point can be contacted."@en;
   sh:nodeKind sh:Literal;
+  sh:pattern "^mailto:.+@.+\\..+$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
