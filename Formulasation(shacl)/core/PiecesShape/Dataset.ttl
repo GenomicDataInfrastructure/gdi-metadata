@@ -109,7 +109,7 @@ gdi:1MGCohort a dct:Standard;
   sh:description "An entity (organisation) responsible for making the dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node gdi:AgentPublisherShape;
+  sh:node gdi:AgentHdabShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
