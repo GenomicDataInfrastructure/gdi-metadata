@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Health-RI
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+.idea/.gitignore
+.idea/aws.xml
+.idea/gdi-metadata.iml
+.idea/misc.xml
+.idea/modules.xml
