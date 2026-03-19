@@ -38,8 +38,8 @@ graph TD
     Distribution -->|"dcat:accessService<br/>0..*"| DataService
     DataService -->|"dcat:servesDataset<br/>0..*"| Dataset
 
-    AgentPublisher -->|"cv:contactPoint<br/>1..*"| Kind
-    AgentHDAB -->|"cv:contactPoint<br/>1..*"| Kind
+    AgentPublisher -->|"dcat:contactPoint<br/>1..*"| Kind
+    AgentHDAB -->|"dcat:contactPoint<br/>1..*"| Kind
 
     style Resource fill:#e0e0e0,stroke:#666,color:#000
     style Catalog fill:#bbdefb,stroke:#1565c0,color:#000
@@ -74,7 +74,6 @@ graph TD
 | Prefix | Full URI | Description |
 |---|---|---|
 | **foaf** | `http://xmlns.com/foaf/0.1/` | **Friend of a Friend** — vocabulary for describing people and organisations. Used for `foaf:Agent` (creator, HDAB) and `foaf:name`. |
-| **cv** | `http://data.europa.eu/m8g/` | **Core Public Organisation Vocabulary** — provides `cv:contactPoint`, used to attach a `vcard:Kind` contact point to publisher and HDAB agents. |
 | **vcard** | `http://www.w3.org/2006/vcard/ns#` | **vCard ontology** — models contact information (email, name, URL). Used for `vcard:Kind` contact points on the HDAB agent. |
 
 ### Identifiers and Asset Description
