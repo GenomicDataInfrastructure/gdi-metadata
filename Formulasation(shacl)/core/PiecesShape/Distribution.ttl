@@ -32,6 +32,7 @@ gdi:DistributionShape a sh:NodeShape;
   sh:property <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessURL>, 
     <http://data.gdi.eu/core/p2/DistributionShape#dcatap:applicableLegislation>, 
     <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService>,
+    <http://data.gdi.eu/core/p2/DistributionShape#adms:status>,
     <http://data.gdi.eu/core/p2/DistributionShape#dct:title> .
 
 <http://data.gdi.eu/core/p2/DistributionShape#dcat:accessService> sh:path dcat:accessService;
@@ -55,6 +56,16 @@ gdi:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
+<http://data.gdi.eu/core/p2/DistributionShape#adms:status> sh:path adms:status;
+  sh:name "status"@en;
+  sh:description "The lifecycle status of the Distribution metadata record. Use the EU Distribution Status vocabulary; in GDI this supports operational states such as Withdrawn."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:defaultValue status:COMPLETED;
+  sh:in ( status:COMPLETED status:DEPRECATED status:UNDER_DEVELOPMENT status:WITHDRAWN );
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
 <http://data.gdi.eu/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:minCount 1;
@@ -63,4 +74,3 @@ gdi:DistributionShape a sh:NodeShape;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
-
