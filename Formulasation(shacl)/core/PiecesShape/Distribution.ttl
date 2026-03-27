@@ -58,11 +58,11 @@ gdi:DistributionShape a sh:NodeShape;
 
 <http://data.gdi.eu/core/p2/DistributionShape#adms:status> sh:path adms:status;
   sh:name "status"@en;
-  sh:description "The lifecycle status of the Distribution metadata record. Use the EU Distribution Status vocabulary; in GDI this supports operational states such as Withdrawn."@en;
+  sh:description "The lifecycle status of the Distribution metadata record. Use the EU Distribution Status vocabulary; in GDI this supports operational states such as Develop and Withdrawn."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue status:COMPLETED;
-  sh:in ( status:COMPLETED status:DEPRECATED status:UNDER_DEVELOPMENT status:WITHDRAWN );
+  sh:in ( status:COMPLETED status:DEPRECATED status:DEVELOP status:WITHDRAWN );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 

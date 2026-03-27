@@ -174,11 +174,11 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
 
 <http://data.gdi.eu/core/p2/DatasetShape#status> sh:path adms:status;
   sh:name "status"@en;
-  sh:description "The lifecycle status of the Dataset metadata record. Use the EU Dataset Status vocabulary; in GDI this supports operational states such as Withdrawn."@en;
+  sh:description "The lifecycle status of the Dataset metadata record. Use the EU Dataset Status vocabulary; in GDI this supports operational states such as Develop, Discontinued, and Withdrawn."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue datasetstatus:COMPLETED;
-  sh:in ( datasetstatus:COMPLETED datasetstatus:DEPRECATED datasetstatus:UNDER_DEVELOPMENT datasetstatus:WITHDRAWN );
+  sh:in ( datasetstatus:COMPLETED datasetstatus:DEPRECATED datasetstatus:DEVELOP datasetstatus:DISCONT datasetstatus:WITHDRAWN );
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
