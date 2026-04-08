@@ -14,8 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- `adms:status` on dataset and distribution level in the GDI SHACL shapes and metadata submission guidance.
 
 ### Changed
+- Metadata overview documentation now shows status on both dataset and distribution records.
 
 ### Deprecated
 

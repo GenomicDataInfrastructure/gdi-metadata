@@ -19,6 +19,7 @@
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
+@prefix datasetstatus: <http://publications.europa.eu/resource/authority/dataset-status/> .
 @prefix type: <https://publications.europa.eu/resource/authority/dataset-type/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -39,7 +40,8 @@ gdi:DatasetShape a owl:Ontology, sh:NodeShape;
     <http://data.gdi.eu/core/p2/DatasetShape#keyword>, <http://data.gdi.eu/core/p2/DatasetShape#legal-basis>,
     <http://data.gdi.eu/core/p2/DatasetShape#health-category>,
     <http://data.gdi.eu/core/p2/DatasetShape#number-of-records>, <http://data.gdi.eu/core/p2/DatasetShape#number-of-unique-individuals>,
-    <http://data.gdi.eu/core/p2/DatasetShape#other-identifier>, <http://data.gdi.eu/core/p2/DatasetShape#theme>,
+    <http://data.gdi.eu/core/p2/DatasetShape#other-identifier>, <http://data.gdi.eu/core/p2/DatasetShape#status>,
+    <http://data.gdi.eu/core/p2/DatasetShape#theme>,
     <http://data.gdi.eu/core/p2/DatasetShape#title>, <http://data.gdi.eu/core/p2/DatasetShape#type>,
     <http://data.gdi.eu/core/p2/DatasetShape#publisher> .
 
@@ -169,6 +171,16 @@ gdi:HealthCategoryHumanGenomic a skos:Concept;
   sh:node gdi:IdentifierShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
+
+<http://data.gdi.eu/core/p2/DatasetShape#status> sh:path adms:status;
+  sh:name "status"@en;
+  sh:description "The lifecycle status of the Dataset metadata record. Use the EU Dataset Status vocabulary; in GDI this supports operational states such as Develop, Discontinued, and Withdrawn."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:defaultValue datasetstatus:COMPLETED;
+  sh:in ( datasetstatus:COMPLETED datasetstatus:DEPRECATED datasetstatus:DEVELOP datasetstatus:DISCONT datasetstatus:WITHDRAWN );
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
 
 <http://data.gdi.eu/core/p2/DatasetShape#is-referenced-by> sh:path dct:isReferencedBy;
   sh:name "is referenced by"@en;

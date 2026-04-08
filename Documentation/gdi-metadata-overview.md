@@ -13,10 +13,10 @@ graph TD
     Resource["<b>Resource</b><br/><i>dcat:Resource</i>"]
 
     Catalog["<b>Catalog</b><br/><i>dcat:Catalog</i><br/>title, description,<br/>applicableLegislation"]
-    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>creator, publisher,<br/>accessRights, applicableLegislation,<br/>theme, keyword, healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
+    Dataset["<b>Dataset</b><br/><i>dcat:Dataset</i><br/>title, description, identifier,<br/>creator, publisher,<br/>accessRights, applicableLegislation,<br/>status, theme, keyword,<br/>healthCategory, type,<br/>conformsTo, legalBasis,<br/>numberOfRecords,<br/>numberOfUniqueIndividuals,<br/>isReferencedBy"]
     DataService["<b>DataService</b><br/><i>dcat:DataService</i><br/>title, endpointURL"]
 
-    Distribution["<b>Distribution</b><br/><i>dcat:Distribution</i><br/>title, accessURL,<br/>applicableLegislation"]
+    Distribution["<b>Distribution</b><br/><i>dcat:Distribution</i><br/>title, accessURL,<br/>applicableLegislation,<br/>status"]
 
     AgentCreator["<b>Agent (Creator)</b><br/><i>foaf:Agent</i><br/>name"]
     AgentPublisher["<b>Agent (Publisher)</b><br/><i>foaf:Agent</i><br/>name"]
@@ -80,7 +80,7 @@ graph TD
 
 | Prefix | Full URI | Description |
 |---|---|---|
-| **adms** | `http://www.w3.org/ns/adms#` | **Asset Description Metadata Schema** — EU vocabulary for describing reusable assets. Used for `adms:Identifier` (secondary identifiers) and `adms:schemaAgency`. |
+| **adms** | `http://www.w3.org/ns/adms#` | **Asset Description Metadata Schema** — EU vocabulary for describing reusable assets. Used for `adms:Identifier` (secondary identifiers), `adms:schemaAgency`, and `adms:status` on dataset and distribution records. |
 | **skos** | `http://www.w3.org/2004/02/skos/core#` | **Simple Knowledge Organization System** — for controlled vocabularies and concept schemes. Used for `skos:Concept` (health categories, themes) and `skos:notation` (identifier strings). |
 
 ### Legal and Privacy
